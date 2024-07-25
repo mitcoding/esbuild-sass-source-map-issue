@@ -1,0 +1,55 @@
+.sharethisbuttons {
+    &__base {
+        @extend .fab;
+        
+        // Since the image is written as an inline style we have to make this important to get rid of it
+        background: none !important;
+        font-size: $font-size-base * 2.125;
+        color: $sharethis-i-clr;
+    }
+    .st {
+        &Button {
+            z-index: 0;
+        }
+        &_facebook {
+            &_large {
+                .stLarge {
+                    @extend .sharethisbuttons__base;
+                    @extend .fa-facebook-square;
+                }
+            }
+        }
+
+        &_twitter {
+            &_large {
+                .stLarge {
+                    @extend .sharethisbuttons__base;
+                    @extend .fa-square-x-twitter !optional;
+                }
+            }
+        }
+
+        &_linkedin {
+            &_large {
+                .stLarge {
+                    @extend .sharethisbuttons__base;
+                    @extend .fa-linkedin;
+                }
+            }
+        }
+
+        &_email {
+            &_large {
+                .stLarge {
+                    @extend .fas;
+                    @extend .fa-envelope;
+
+                    // Since the image is written as an inline style we have to make this important to get rid of it
+                    background: none !important;
+                    font-size: $font-size-base * 2.125;
+                    color: $sharethis-i-clr;
+                }
+            }
+        }
+    }
+}

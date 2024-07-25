@@ -1,0 +1,126 @@
+/*
+ * Styling for a basic content search result
+ */
+
+.cmp-content-search-result-list-item {
+
+  // Display flex to lay out the image and details child items
+  display: flex;
+  flex-direction: column;
+  padding-bottom: $spacer-3x;
+  border-bottom: 1px solid $green;
+
+  // Image Styling
+  &__img-container {
+    margin-bottom: $spacer-3x;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  // Detail items styling
+  &__details {
+
+    &-name {
+      margin-bottom: 0;
+      font-weight: $headings-font-weight;
+    }
+
+    &-description {
+      margin-bottom: $spacer-2x;
+    }
+
+    &-date-published {
+      font: $caption-font;
+      color: $gray-600;
+      display: block;
+      margin-bottom: $spacer-2x;
+    }
+
+    &-contentType {
+      font: $caption-font;
+      color: $primary;
+    }
+
+    &-cta {
+      text-decoration: none;
+    }
+
+  }
+
+  // Container for date published and content type
+  &__footer-item {
+    display: flex;
+    column-gap: $spacer-2x;
+  }
+
+}
+
+@include media-breakpoint-up(md) {
+  .cmp-content-search-result-list-item {
+
+    flex-direction: row;
+
+    &__img-container {
+      width: 35%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: $spacer-3x;
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+/*
+ * Styling for grid layout
+ */
+.cmp-search-results-container {
+  .listing-grid {
+    .cmp-content-search-result-list-item {
+
+      width: 100%;
+
+      flex-direction: column;
+
+      &__img-container {
+        margin-right: $spacer-2x * -1;
+        margin-left: $spacer-2x * -1;
+        margin-top: $spacer-2x * -1;
+        margin-bottom: $spacer-2x;
+        width: auto;
+
+        height: 0;
+        padding-top: $teaser-imagecontainer-image-standard-aspect-ratio * 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      &__img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        &-name {
+          a {
+            text-decoration: none;
+          }
+        }
+
+        &-description {
+          flex-grow: 2;
+        }
+      }
+    }
+  }
+}

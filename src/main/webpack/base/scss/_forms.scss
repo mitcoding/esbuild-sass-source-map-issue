@@ -1,0 +1,353 @@
+.form_group {
+    padding: .5rem;
+
+    .label-small {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+
+input[type="text"] {
+    font-size: 1rem;
+    border: 1.5px solid $border-color;
+    border-radius: 4px;
+    box-shadow: none;
+    color: $text-standard;
+
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 1rem;
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &::placeholder {
+        color: $gray-400;
+    }
+}
+
+input[type="tel"] {
+    font-size: 1rem;
+    border: 1.5px solid $border-color;
+    border-radius: 4px;
+    box-shadow: none;
+    color: $text-standard;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 1rem;
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &::placeholder {
+        color: $gray-400;
+    }
+}
+
+input[type="email"] {
+    font-size: 1rem;
+    border: 1.5px solid $border-color;
+    border-radius: 4px; // Note, this was 5px, changing to 0 per design
+    box-shadow: none;
+    color: $text-standard;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 1rem;
+
+    &::-ms-clear {
+        display: none;
+    }
+
+    &::placeholder {
+        color: $gray-400;
+    }
+}
+
+input,
+label {
+    display: block;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+input,
+label {
+    display: block;
+    margin-bottom: 0;
+    font-size: .95rem;
+}
+
+//input:not(:placeholder-shown):not(:focus):invalid,
+form_group.submitted input:invalid {
+    border-color: red;
+}
+
+form.submitted input:invalid {
+    border-color: red;
+}
+
+form.submitted select:not(:focus):invalid {
+    border-color: red;
+}
+
+select,
+select.form-control {
+    border: 1.5px solid $border-color;
+    border-radius: 4px;
+    box-shadow: none;
+    color: $text-standard;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 1rem;
+}
+
+textarea,
+textarea.form-control {
+    border: 1.5px solid $border-color;
+    border-radius: 4px; // Note, this was 5px, changing to 0 per design
+    box-shadow: none;
+    color: $text-standard;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 1rem;
+    resize: vertical;
+}
+
+/*
+button {
+    border: 1.5px solid $border-color;
+    border-radius: 4px; // Note, this was 5px, changing to 0 per design
+    outline: none;
+    box-shadow: none;
+    background-color: $primary;
+    color: white;
+}
+ */
+
+::-webkit-input-placeholder,
+/* Edge */
+:-ms-input-placeholder,
+/* Internet Explorer 10-11 */
+::placeholder {
+    color: $gray-400;
+}
+
+.fooeller-form {
+
+    label {
+        font: $body-font;
+        color: $gray-600;
+        margin-bottom: 0;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    &__field {
+        width: 100%;
+        //min-width: 22.5rem;
+        color: $gray-600;
+        font: $body-font;
+        border-radius: .25rem;
+        border: .06rem solid $gray-400;
+
+        &:focus {
+            border: .06rem solid $primary;
+            box-shadow: 0 0 0 .125rem $primary;
+            -webkit-box-shadow: 0 0 0 .125rem $primary;
+        }
+
+        &:disabled {
+            background-color: $gray-200;
+        }
+    }
+
+    input,
+    select {
+        height: 2.375rem;
+        @extend .fooeller-form__field;
+    }
+
+    textarea {
+        @extend .fooeller-form__field;
+    }
+
+    &__input::placeholder {
+        color: $gray-600;
+    }
+
+    &__input-field-percentage {
+
+        input[type="text"],
+        input[type="number"] {
+            -moz-appearance: textfield;
+            padding: 0 .125rem 0 .9375rem;
+        }
+    }
+
+    &__input-field-amount {
+        input[type="text"] {
+            padding: 0 2.125rem;
+        }
+    }
+
+    &__input-field-text {
+        input[type="text"] {
+            padding: 0 .125rem 0 .9375rem;
+        }
+    }
+
+    &__input-field-number {
+        input[type="number"] {
+            padding: 0 .125rem 0 .9375rem;
+        }
+    }
+
+    &__input-field-percentage .fooeller-form__input-end:after {
+        content: '%';
+        color: $gray-600;
+        font: $body-font;
+    }
+
+    &__input-field-amount .fooeller-form__input-start:before {
+        content: '$';
+        color: $gray-600;
+        font: $body-font;
+    }
+
+    &__label-group {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__input-field-text {
+        .fooeller-form__input-end:after {
+            font-family: $font-family-icon-font;
+            font-weight: 900;
+            content: '\f00a';
+        }
+    }
+
+    &__input-start {
+        position: relative;
+
+        &:before {
+            position: absolute;
+            top: .438rem;
+            left: .9375rem
+        }
+    }
+
+    &__input-end {
+        position: absolute;
+        top: 1.875rem;
+        right: .6875rem;
+        height: min-content;
+        width: min-content;
+    }
+
+    &__input-error-txt {
+        font: $caption-font;
+        color: $red;
+    }
+
+    &__input-field {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        //min-width: 22.375rem;
+    }
+
+    &--not-submitted {
+
+        input:not(:placeholder-shown):not(:focus):invalid,
+        form.submitted input:invalid {
+            border: .06rem solid $gray-400;
+        }
+    }
+
+    &--submitted,
+    &--live-check {
+
+        .fooeller-form__input:invalid,
+        .fooeller-form__input-error input[type="text"] {
+            border: .06rem solid $red;
+        }
+
+        .fooeller-form__input-error .fooeller-form__input-end:after {
+            font-family: $font-family-icon-font;
+            font-weight: 900;
+            content: '\f06a';
+            color: $red;
+        }
+
+        .fooeller-form__input-field-amount,
+        .fooeller-form__input-field-text {
+            .fooeller-form__input:invalid+.fooeller-form__input-end:after {
+                font-family: $font-family-icon-font;
+                font-weight: 900;
+                content: '\f06a';
+            }
+        }
+
+        .fooeller-form__input:invalid+.fooeller-form__input-end:after,
+        .fooeller-form__input-error+.fooeller-form__input-end:after {
+            color: $red;
+        }
+    }
+
+    &__btn-base {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.25rem;
+        border: none;
+        border-color: $gray-700;
+        height: 2.5rem;
+        //min-width: 14.688rem;
+        -webkit-box-shadow: 0 0 .19rem 0 rgba(0, 0, 0, 0.14);
+        box-shadow: 0 0 .19rem 0 rgba(0, 0, 0, 0.14);
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.084rem;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__btn {
+        @extend .fooeller-form__btn-base;
+        background-color: $primary;
+        color: $white;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $primary;
+            color: $white;
+            text-decoration: none;
+        }
+
+        &--disabled {
+            background-color: $gray-400;
+            color: $gray-600;
+
+            &:hover {
+                color: $gray-600;
+                background-color: $gray-400;
+                cursor: not-allowed;
+            }
+        }
+    }
+}

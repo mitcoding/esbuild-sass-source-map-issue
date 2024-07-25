@@ -1,0 +1,57 @@
+@use "sass:map";
+
+.title {
+  > .cmp-title {
+    > b {
+      font-weight: unset;
+
+      &:after {
+        content: ": "
+      }
+    }
+
+    > small {
+      display: block;
+    }
+
+    $font-weight: map.get($utilities, "font-weight");
+    $fw-prefix: map.get($font-weight, "class");
+    $font-weights: map.get($font-weight, "values");
+
+    @each $name, $value in $font-weights {
+      &.#{$fw-prefix}-#{"" + $name} > small {
+        @if $value != $font-weight-lighter and $value != $font-weight-bolder and $value != 100 {
+          font-weight: #{$value - 100};
+        } 
+        @else {
+          font-size: $small-font-size - 12.5%;
+        }
+      }
+    }
+  }
+
+  &.ss {
+    &-layout-stacked {
+        margin-bottom: 0 !important;
+    }
+
+    &-alignment {
+
+      &-right {
+        text-align: right;
+      }
+
+      &-center {
+        text-align: center;
+      }
+
+    }
+
+    &-style-blocked {
+      display: inline-block;
+      padding: $title-padding-blocked;
+      background-color: $title-background-color-blocked;
+      color: $title-color-blocked;
+    }
+  }
+}

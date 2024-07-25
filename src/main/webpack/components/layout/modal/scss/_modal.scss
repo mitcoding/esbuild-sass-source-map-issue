@@ -1,0 +1,35 @@
+/*
+ * Common styles overriding bootstrap modal styles
+ */
+
+
+.modal {
+  .modal-body {
+    // Covers the case where the XF embedded does not contain its content in a container of any type
+    > div[class^="cmp-experiencefragment--"] {
+      > .aem-Grid {
+        > .responsivegrid {
+          > .aem-Grid {
+            > div:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    // Bootstrap variables don't allow for differentation of footer padding across different axis
+    padding-top: $spacer-2x;
+    padding-bottom: $spacer-2x;
+
+    // OOB bootstrap has no BG color for the footer.  This allows for differentiation
+    background-color: $gray-100;
+
+    // Remove underlines from button CTAs in the modal footer
+    a, a:hover, a:visited, a:active {
+      text-decoration: none;
+    }
+  }
+}

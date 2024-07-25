@@ -1,0 +1,14 @@
+.cmp-experiencefragment {
+
+  // Get rid of the margin bottom in the last item of experience fragments.  Since a fragment is not always going
+  // to start with a page section we have to get rid of excess margin here.  Relies on the template structure of the XF
+  > .aem-Grid {
+    > .responsivegrid {
+      > .aem-Grid {
+        > div:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

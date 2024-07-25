@@ -1,0 +1,42 @@
+/* Don't use !default here as this 
+ * has to come after the bootstrap 
+ * variable definitions 
+ */
+ 
+$spacers: map-merge($spacers, $custom-spacers);
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$theme-colors: map-merge($theme-colors, $colors);
+
+
+/* 
+ * disabling bootstrap class generation of 
+ * bg, border, & text color utility classes;
+ * FOO's has finer grain control of 
+ * bg, border & text color options 
+ */
+$utilities: (
+  "border-color": (),
+  "border-opacity": (),
+  "color": (),
+  "text-opacity": (),
+  "background-color": (),
+  "bg-opacity": (),
+  "font-weight": (
+      property: font-weight,
+      class: fw,
+      values: (
+        lighter: $font-weight-lighter,
+        thin: $font-weight-thin,
+        ultraLight: $font-weight-ultraLight, 
+        light: $font-weight-light,
+        normal: $font-weight-normal,
+        medium: $font-weight-medium,
+        semibold: $font-weight-semibold,
+        bold: $font-weight-bold,
+        ultraBold: $font-weight-ultraBold,
+        black: $font-weight-black,
+        bolder: $font-weight-bolder
+      )
+    )
+) !default;
+

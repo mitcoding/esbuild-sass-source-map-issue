@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+@function rem-calc($values, $base: null) {
+    $rem-values: ();
+    $count: length($values);
+
+    @if $base == null {
+        $base: $font-size-base;
+    }
+
+    @if $count == 1 {
+       @return convert-to-rem($values, $base);
+    }
+
+    @for $i from 1 through $count {
+        $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $base));
+    }
+
+    @return $rem-values;
+}
+
+@function convert-to-rem($value, $base: null) {
+    @if unit($value) != 'rem' {
+        $pxValue: px-calc($value);
+        $value: math.div(strip-unit($pxValue), strip-unit($base) ) * 1rem;
+    }
+
+    @if $value == 0rem {
+        $value: 0;
+    }
+
+    @return $value;
+}

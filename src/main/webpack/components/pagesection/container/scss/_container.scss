@@ -1,0 +1,108 @@
+.contentcontainer {    
+    // Default margin bottom rule
+    margin-bottom: $spacer-4x;
+            
+    /*
+     * The final component in a content container shall have a 0 margin-bottom rule
+     */
+    > .cmp-container { 
+        > :last-child {
+            margin-bottom: 0;
+
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &.ss-contentalignment-center {
+        > .cmp-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &.ss-contentalignment-right {
+        > .cmp-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    }
+
+    &.ss-contentalignment-grid-row,
+    &.ss-contentalignment-space-between {
+        display: grid;
+        
+        > .cmp-container {
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+        }
+    }
+
+    &.ss-contentalignment-grid-row {
+        > .cmp-container {
+            flex-flow: row;
+        }
+    }
+
+    &.ss-containerpresentationtype-card {
+        background-color: $white;
+        box-shadow: $container-elevation-card;
+        border: 1px solid $gray-200;
+        padding: $spacer-4x;
+    }
+
+    .ss-round-img {
+        img {
+            border-radius: 50%;
+        }
+    }
+}
+
+/*
+ * Getting the cards to line up a full height
+ */
+.cmp-columnrow__column {
+    @include media-breakpoint-up(xl) {
+        &[class*="g-col-xl-"] {
+            > .contentcontainer.ss-containerpresentationtype-card {
+                height: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &[class*="g-col-lg-"] {
+            > .contentcontainer.ss-containerpresentationtype-card {
+                height: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &[class*="g-col-md-"] {
+            > .contentcontainer.ss-containerpresentationtype-card {
+                height: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        &[class*="g-col-sm-"] {
+            > .contentcontainer.ss-containerpresentationtype-card {
+                height: 100%;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xs) {
+        &[class*="g-col-xs-"] {
+            > .contentcontainer.ss-containerpresentationtype-card {
+                height: 100%;
+            }
+        }
+    }
+}

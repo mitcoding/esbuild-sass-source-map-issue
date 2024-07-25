@@ -1,0 +1,278 @@
+// Basing this on https://dribbble.com/shots/5413821-Daily-UI-039-Testimonials
+
+.quotation {
+    margin-bottom: $quotation-margin-bottom;
+
+    >.cmp-quotation {
+        padding: 0;
+
+        .cmp-quotation__content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .cmp-quotation__content__image {
+            max-width: 100%;
+            max-height: $quotation-image-max-height;
+            margin-bottom: $quotation-image-margin-bottom;
+        }
+
+
+        @if($quotation-icon) {
+            .cmp-quotation__content__figure__text::before {
+                position: absolute;
+                font-size: $quotation-text-icon-font-size;
+                top: $quotation-text-top;
+                left: $quotation-text-left;
+                color: $quotation-text-primary-color;
+                @include font-icon($quotation-icon, $font-family-icon-font);
+            }
+        }
+
+        .cmp-quotation__content{
+            &__figure {
+                padding: 0 $spacer-6x $spacer-4x;
+
+                @include media-breakpoint-down(md) {
+                    padding: 0 $spacer-2x $spacer-4x;
+                }
+
+                &__person {
+                    padding: 0;
+                    margin: 0;
+
+                    &__name {
+                        display: block;
+                        color: $quotation-person-name-color;
+                        @extend .h2;
+                        margin: 0;
+                    }
+
+                    &__title {
+                        display: block;
+                        color: $quotation-person-title-color;
+                        font-style: $quotation-person-title-style;
+                    }
+                }
+
+                &__text {
+                    position: relative;
+                    padding: 0;
+                    margin: 0;
+
+                    p {
+                        // TODO: Forcing this here for cases of a card on a dark background
+                        color: $text-standard;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .quotation {
+        >.cmp-quotation {
+            .cmp-quotation__content {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .cmp-quotation__content__image {
+                margin-right: $quotation-image-margin-right;
+                margin-bottom: 0;
+                max-width: $quotation-image-max-width;
+            }
+        }
+    }
+}
+
+/*.cmp-quotation {
+    background-color: $gray-100;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+
+    &__content {
+
+        &__figure {
+
+            &__person {
+
+                &__name {
+
+                    @extend .h4;
+
+                    color: $gray-600;
+
+                    &::before {
+                        content: "-";
+                    }
+                }
+
+                &__title {
+
+                    @extend .body-sm;
+
+                    display: block;
+                    color: $secondary;
+                    font-weight: $font-weight-bold;
+                    margin: 0;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /*
+
+    &-wrapper {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: ($grid-unit * 9 * $quotation-spacing-basis) ($grid-unit * 2 * $quotation-spacing-basis) 1fr;
+        grid-template-columns: ($grid-unit * 9 * $quotation-spacing-basis) ($grid-unit * 2 * $quotation-spacing-basis) 1fr;
+        padding: $grid-unit * 2 * $quotation-spacing-basis;
+    }
+
+    .quotation {
+        &-image {
+            width: 100%;
+        }
+
+        &-person {
+            -ms-grid-column: 3;
+            -ms-grid-row: 1;
+            grid-column: 3;
+            grid-row: 1;
+            align-self: center;
+
+            &_name {
+                border-bottom: 1px solid $gray-400;
+                color: $gray-700;
+                padding-bottom: $grid-unit * $quotation-spacing-basis;
+                margin-bottom: $grid-unit * $quotation-spacing-basis;
+            }
+
+            &_title {
+                @extend .body-xs;
+                color: $primary;
+                font-weight: $font-weight-bold;
+                margin: 0;
+            }
+        }
+
+        &-text {
+            -ms-grid-column-span: 3;
+            -ms-grid-column: 1;
+            -ms-grid-row: 2;
+            grid-column: 1 / span 3;
+            grid-row: 2;
+            margin-top: $grid-unit * 2 * $quotation-spacing-basis;
+
+            p {
+                display: flex;
+                flex-flow: row nowrap;
+                @extend .body-sm;
+
+                &:before,
+                &:after {
+                    color: $primary;
+                    font-size: 32px;
+                    font-weight: 800;
+                    line-height: 1.19;
+                    letter-spacing: -0.48px;
+                    height: $grid-unit * 2 * $quotation-spacing-basis;
+                }
+
+                &:before {
+                    content: "“";
+                    margin-right: $grid-unit * $quotation-spacing-basis;
+                }
+
+                &:after {
+                    content: "”";
+                    margin-left: $grid-unit * $quotation-spacing-basis;
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+
+
+
+}
+*/
+/*
+@include media-breakpoint-up(lg) {
+    .quotation {
+        box-shadow: rem-calc(0 4px 4px 0) rgba(0, 0, 0, 0.25);
+
+        &-wrapper {
+            padding: 0 ($grid-unit * 8 * $quotation-spacing-basis) 0 0;
+            -ms-grid-columns: ($grid-unit * 44 * $quotation-spacing-basis) ($grid-unit * 6 * $quotation-spacing-basis) 1fr;
+            grid-template-columns: ($grid-unit * 44 * $quotation-spacing-basis) ($grid-unit * 6 * $quotation-spacing-basis) 1fr;
+        }
+
+        .quotation {
+            &-image {
+                -ms-grid-column: 1;
+                -ms-grid-row: 1;
+                -ms-grid-row-span: 2;
+                grid-column: 1;
+                grid-row: 1 / span 2;
+            }
+
+            &-person {
+                -ms-grid-column: 3;
+                -ms-grid-row: 1;
+                grid-column: 3;
+                grid-row: 1;
+                margin-top: $grid-unit * 6 * $quotation-spacing-basis;
+            }
+
+            &-text {
+                -ms-grid-column: 3;
+                -ms-grid-row: 2;
+                grid-column: 3;
+                grid-row: 2;
+                margin-top: $grid-unit * 5 * $quotation-spacing-basis;
+
+                p {
+                    font-size: 26px;
+                    font-weight: normal;
+                    line-height: 1.46;
+                    letter-spacing: 0.26px;
+
+
+                    &:before,
+                    &:after {
+                        color: $primary;
+                        font-size: 65px;
+                        font-weight: 800;
+                        line-height: 1.29;
+                        letter-spacing: -0.98px;
+                        height: $grid-unit * 7 * $quotation-spacing-basis;
+                    }
+
+                    &:before {
+                        margin-right: $grid-unit * 3 * $quotation-spacing-basis;
+                    }
+
+                    &:after {
+                        margin-left: $grid-unit * 3 * $quotation-spacing-basis;
+                    }
+                }
+            }
+        }
+    }
+}
+.ss-containerpresentationtype-card {
+    .cmp-quotation {
+        background-color: transparent;
+        box-shadow: none;
+    }
+}
+*/

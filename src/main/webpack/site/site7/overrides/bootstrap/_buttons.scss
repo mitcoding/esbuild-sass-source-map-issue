@@ -1,0 +1,37 @@
+.btn {
+  &.btn- {
+    &outline- {
+      &black {
+        --bs-btn-bg: #{$white};
+        --bs-btn-hover-color: #{$white};
+        --bs-btn-hover-bg: #{$secondary-dark};
+        --bs-btn-hover-border-color: #{$secondary-lightest};
+        --bs-btn-active-color: #{$white};
+        --bs-btn-active-bg: #{$black};
+        --bs-btn-active-border-color: #{$secondary-lightest};
+      }
+    }
+
+    &orange {
+        --bs-btn-hover-color: #{$white};
+        --bs-btn-hover-bg: #{$secondary-dark};
+        --bs-btn-active-color: #{$white};
+        --bs-btn-active-bg: #{$secondary-dark};
+    }
+
+    &yellow {
+      --bs-btn-hover-color: #{$white};
+      --bs-btn-hover-bg: #{$secondary-dark};
+      --bs-btn-active-color: #{$white};
+      --bs-btn-active-bg: #{$secondary-dark};
+    }
+
+    &red {
+      --bs-btn-color: #{$white};
+      --bs-btn-hover-color: #{$white};
+      --bs-btn-hover-bg: #{$secondary-dark};
+      --bs-btn-active-color: #{$white};
+      --bs-btn-active-bg: #{$secondary-dark};
+    }
+  }
+}

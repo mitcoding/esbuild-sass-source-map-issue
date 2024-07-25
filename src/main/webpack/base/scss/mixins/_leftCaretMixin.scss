@@ -1,0 +1,20 @@
+@mixin leftCaret($color: $primary, $height: 12px, $width: 14px, $margin: 24px) {
+    &:after {
+        border-top: rem-calc($height*0.75) solid transparent;
+        border-bottom: rem-calc($height*0.75) solid transparent;
+        border-right: rem-calc($width*0.75) solid $color;
+        content: '';
+        display: inline-block;
+        height: 0;
+        margin-right: rem-calc($margin*0.75);
+        width: 0;
+        vertical-align: middle;;
+
+        @include media-breakpoint-up(md) {
+            border-top: rem-calc($height) solid transparent;
+            border-bottom: rem-calc($height) solid transparent;
+            border-right: rem-calc($width) solid $color;
+            margin-right: rem-calc($margin);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.pagefooter.pagesection {
+    background-color: $gray-100;
+    color: $black;
+    text-align: center;
+
+    .cmp-logo {
+        display: inline-block;
+    }
+
+    .cmp-container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .cmp-genericlist {
+        align-items: center;
+    }
+
+    > .cmp-pagesection {
+        padding: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        text-align : left;
+
+        .cmp-container {
+            align-items: start;
+        }
+
+        .cmp-genericlist {
+            display: flex;
+            flex-flow: row;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .logo {
+            margin-left: auto;
+            text-align: right;
+
+            + .contentcontainer {
+                margin-left: auto;
+            }
+        }
+    }
+}

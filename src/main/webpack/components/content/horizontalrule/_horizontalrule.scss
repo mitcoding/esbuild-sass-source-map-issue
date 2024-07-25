@@ -1,0 +1,30 @@
+.horizontalrule {
+  /* box-sizing, border, & 
+   * neagative margin needed 
+   * so margin on .cmp-horizontalrule
+   * increases the box size to the 
+   * desired height when the 
+   * horiz ruler thickess is only
+   * 1px
+   */
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid transparent;
+  margin: -1px;
+}
+
+.cmp-horizontalrule {
+  opacity: unset;
+  background: $primary;
+  width: 100%;
+  height: 0.0625rem;
+  border: 0 none;
+  margin: $spacer-2x auto;
+}
+
+@each $num,
+$thickness in $thickness-options {
+  .ss-hr-#{$num} {
+    height: $thickness;
+  }
+}

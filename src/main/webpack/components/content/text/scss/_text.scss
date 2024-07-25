@@ -1,0 +1,82 @@
+.text {    
+    margin-bottom: $grid-unit * 3 * $text-marginbottom-basis;
+
+    &.ss-fontsize-bodylarge {
+
+        @extend .body-lg;
+
+        p {
+            @extend .body-lg;
+        }
+    }
+
+    &.ss-fontsize-bodymedium {
+
+        @extend .body-md;
+
+        p {
+            @extend .body-md;
+        }
+    }
+
+    &.ss-fontsize-bodysmall {
+
+        @extend .body-sm;
+
+        p {
+            @extend .body-sm;
+        }
+    }
+
+    &.ss-fontsize-bodyxsmall {
+
+        @extend .body-xs;
+
+        p {
+            @extend .body-xs;
+        }
+    }
+
+   &.ss-text-like-title--h1 {
+        p {
+            @extend .h1;
+            font-weight: $font-weight-normal;
+        }
+    }
+    
+    &.ss-text-like-title--h2 {
+        p {
+            @extend .h2;
+            font-weight: $font-weight-bold;
+        }
+    }
+    
+    &.ss-text-like-title--h3 {
+        p {
+            @extend .h3;
+            font-weight: $font-weight-bold;
+        }
+    }
+    
+   /*
+    * The final element of a text will have a 0 margin-bottom as the margin below the text
+    * component itself will handle spacing between the last textual element and the next
+    * entity on the page.
+    */
+    > .cmp-text  {
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.cmp-container {
+    // TODO: What to do when it's not just divs
+    > :last-child {
+        > .cmp-text {
+            h1, h2, h3, h4, h5, h6 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

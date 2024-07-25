@@ -1,0 +1,42 @@
+//TODO: Get this to actually work
+@mixin when-not-stacked() {
+  @include media-breakpoint-up(xl) {
+    &[class*="g-col-xl-"] {
+      > div {
+        @content
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &[class*="g-col-lg-"] {
+      > div {
+        @content
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &[class*="g-col-md-"] {
+      > div {
+        @content
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &[class*="g-col-sm-"] {
+      > div {
+        @content
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xs) {
+    &[class*="g-col-xs-"] {
+      > div {
+        @content
+      }
+    }
+  }
+}

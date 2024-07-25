@@ -1,0 +1,52 @@
+$blue:                #007BFF;
+
+$primary:             #02202F;
+$secondary:           #20496B;
+$tertiary:            #FBD220;
+
+$primary-dark:        #2B2B2B;
+$primary-light:       #4D5154;
+$primary-lightest:    #EEEEEE;
+
+$secondary-dark:      #193849;
+$secondary-light:     #6A8497;
+$secondary-lightest:  #B7C9D6;
+
+$tertiary-dark:       #7B0509;
+$tertiary-light:      #B42025;
+$tertiary-lightest:   #99CC00;
+
+$white:               #FFF;
+
+$custom-theme-colors: (
+  "blue": $blue
+);
+
+
+/* --- Buttons --- */
+$btn-border-width:                  0.125rem; // 2px if font base is 16px
+$btn-border-radius:                 0.3125rem; // 5px if font base is 16px
+
+$btn-disabled-fg-clr:               $primary-light;
+$btn-disabled-bg-clr:               $primary-lightest;
+$btn-disabled-border-color:         $primary-light;
+$btn-disabled-opacity: 1;
+
+$btn-fg-clr-tertiary:              $primary-light;
+$btn-fg-clr-tertiary-active:       $primary-light;
+$btn-fg-clr-tertiary-hover:        $primary-light;
+$btn-bg-clr-tertiary:              $tertiary;
+$btn-bg-clr-tertiary-active:       transparent;
+$btn-bg-clr-tertiary-hover:        transparent;
+$btn-border-color-tertiary:        $tertiary;
+$btn-border-color-tertiary-active: $tertiary;
+$btn-border-color-tertiary-hover:  $tertiary;
+$btn-shadow-tertiary:              none;
+$btn-shadow-tertiary-hover:        none;
+
+$btn-fg-clr-link:                  $primary-light;
+$btn-fg-clr-link-hover:            $btn-fg-clr-link;
+$btn-fg-clr-link-active:           $btn-fg-clr-link;
+$btn-underline-clr-link:           transparent;
+$btn-underline-clr-link-hover:     $tertiary-light;
+$btn-underline-clr-link-active:    $btn-underline-clr-link-hover;

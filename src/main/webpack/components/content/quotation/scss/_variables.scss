@@ -1,0 +1,14 @@
+$quotation-icon: "\f10d" !default;
+$quotation-spacing-basis: $global-spacing-basis !default;
+$quotation-image-margin-bottom: $grid-unit * 4 * $quotation-spacing-basis !default;
+$quotation-margin-bottom: 0 !default;
+$quotation-image-max-height: 70vw !default;
+$quotation-text-icon-font-size: 3rem !default;
+$quotation-text-top: $grid-unit * -4 !default;
+$quotation-text-left: $grid-unit * -1 !default;
+$quotation-text-primary-color: rgba($primary, .20) !default;
+$quotation-person-name-color: $primary !default;
+$quotation-person-title-color: rgb(100, 98, 98) !default;
+$quotation-person-title-style: italic !default;
+$quotation-image-margin-right: $grid-unit * 8 !default;
+$quotation-image-max-width: 35% !default;

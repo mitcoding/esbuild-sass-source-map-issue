@@ -1,0 +1,67 @@
+// ---- Buttons ----
+// ---- Link CTA ----
+$btn-font-family:                   "Inter", sans-serif !default;
+$btn-font-size:                     1rem !default;
+$btn-font-weight:                   700 !default;
+$btn-line-height:                   1.5 !default;
+
+$btn-padding-x:                     $spacer-3x !default;
+$btn-padding-y:                     $spacer-1x !default;
+$btn-border-width:                  $spacer-1x * .125 !default; // 1px;
+
+$btn-disabled-fg-clr:               var(--bs-btn-color) !default;
+$btn-disabled-bg-clr:               var(--bs-btn-bg) !default;
+$btn-disabled-border-color:         var(--bs-btn-border-color) !default;
+
+$btn-fg-clr-primary:                $white !default;
+$btn-fg-clr-primary-active: 	      $white !default;
+$btn-fg-clr-primary-hover:          $white !default;
+$btn-bg-clr-primary:                $primary !default;
+$btn-bg-clr-primary-active: 	      shade-color($primary, 20%) !default;
+$btn-bg-clr-primary-hover:          $primary-dark !default;
+$btn-border-color-primary:          $primary !default;
+$btn-border-color-primary-active:   shade-color($primary, 20%) !default;
+$btn-border-color-primary-hover:    $primary-dark !default;
+$btn-shadow-primary:                none !default;
+$btn-shadow-primary-hover: 	        none !default;
+
+$btn-fg-clr-secondary:              $dark !default;
+$btn-fg-clr-secondary-active: 	    $black !default;
+$btn-fg-clr-secondary-hover:        $dark !default;
+$btn-bg-clr-secondary:              $gray-200 !default;
+$btn-bg-clr-secondary-active: 	    tint-color($gray-200, 20%) !default;
+$btn-bg-clr-secondary-hover:        $gray-300 !default;
+$btn-border-color-secondary:        $gray-200 !default;
+$btn-border-color-secondary-active: tint-color($gray-200, 20%) !default;
+$btn-border-color-secondary-hover:  $gray-300 !default;
+$btn-shadow-secondary:              none !default;
+$btn-shadow-secondary-hover: 	      none !default;
+
+$btn-fg-clr-tertiary:               $primary !default;
+$btn-fg-clr-tertiary-active: 	      $black !default;
+$btn-fg-clr-tertiary-hover:         $primary-dark !default;
+$btn-bg-clr-tertiary:               $white !default;
+$btn-bg-clr-tertiary-active: 	      shade-color($white, 3.9%) !default;
+$btn-bg-clr-tertiary-hover:         $white !default;
+$btn-border-color-tertiary:         $primary !default;
+$btn-border-color-tertiary-active:  shade-color($white, 3.9%) !default;
+$btn-border-color-tertiary-hover:   $black !default;
+$btn-shadow-tertiary:               none !default;
+$btn-shadow-tertiary-hover: 	      none !default;
+
+$btn-fg-clr-foo-corp:              $white !default;
+$btn-fg-clr-foo-corp-hover:        $white !default;
+$btn-bg-clr-foo-corp:              $burgandy !default;
+$btn-bg-clr-foo-corp-hover:        $burgandy-dark !default;
+$btn-border-color-foo-corp:        $burgandy !default;
+$btn-border-color-foo-corp-hover:  $burgandy-dark !default;
+$btn-shadow-foo-corp:              none !default;
+
+$btn-font-weight-link:             $font-weight-normal !default;
+$btn-fg-clr-link:                  $primary !default;
+$btn-fg-clr-link-hover:            $btn-fg-clr-link !default;
+$btn-fg-clr-link-active:           $primary-dark !default;
+$btn-shadow-link:                  none !default;
+$btn-underline-clr-link:           $primary !default;
+$btn-underline-clr-link-hover:     $primary !default;
+$btn-underline-clr-link-active:    $primary-dark !default; 

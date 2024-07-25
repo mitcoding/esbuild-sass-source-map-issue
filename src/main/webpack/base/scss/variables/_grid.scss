@@ -1,0 +1,114 @@
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1440px,
+  xxl: 2336px
+);
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1440px,
+  xxl: 2336px
+);
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// ---- Size Basis ----
+
+$global-size-basis: 1;
+$global-spacing-basis: $global-size-basis;
+$global-marginbottom-basis: $global-spacing-basis;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           1rem;
+$grid-row-columns:            6 !default;
+$global-grid-basis: $global-size-basis * 1;
+$grid-unit: $global-grid-basis * 0.5rem;
+
+// ---- Containers ----
+$container-padding-x: 2rem;
+
+// Typography
+$heading-marginbottom-basis: $global-marginbottom-basis;
+$text-marginbottom-basis: $global-marginbottom-basis;
+
+// Spacer
+$spacer-1x: $grid-unit;
+$spacer-2x: $grid-unit*2;
+$spacer-3x: $grid-unit*3;
+$spacer-4x: $grid-unit*4;
+$spacer-6x: $grid-unit*6;
+$spacer-8x: $grid-unit*8;
+$spacer-12x: $grid-unit*12;
+$spacer-16x: $grid-unit*16;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$custom-spacers: () !default;
+$spacers: (
+     0: 0,
+    25: $spacer * .25,
+    50: $spacer * .5,
+    75: $spacer * .75,
+   100: $spacer,
+   150: $spacer * 1.5,
+   200: $spacer * 2,
+   250: $spacer * 2.5,
+   300: $spacer * 3,
+   400: $spacer * 4,
+   500: $spacer * 5,
+   600: $spacer * 6,
+   700: $spacer * 7,
+   800: $spacer * 8,
+   900: $spacer * 9,
+  1000: $spacer * 10
+) !default;
+
+$box-sizes: (
+     0: 0,
+    25: $spacer * 2.5,
+    50: $spacer * 5,
+    75: $spacer * 7.5,
+   100: $spacer * 10,
+   150: $spacer * 15,
+   200: $spacer * 20,
+   250: $spacer * 25,
+   300: $spacer * 30,
+   400: $spacer * 40,
+   500: $spacer * 50,
+   600: $spacer * 60,
+   700: $spacer * 70,
+   800: $spacer * 80,
+   900: $spacer * 90,
+  1000: $spacer * 100
+) !default;
+
+// scss-docs-end spacer-variables-maps
+$enable-grid-classes: true;
+$enable-cssgrid: true;

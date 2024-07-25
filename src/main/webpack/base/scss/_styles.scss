@@ -1,0 +1,11 @@
+// ---- Bootstrap v.5.2.2 ----
+@import "bootstrap/scss/bootstrap";
+
+
+// ---- Core styles ----
+@import './mixins/mixins';
+@import 'main';
+@import 'forms';
+@import 'buttons';
+@import 'typography';
+@import './icons/icons';

@@ -1,0 +1,16 @@
+.rootedpagenavigation {
+    .nav_list, .subnav_list {
+        list-style: none;
+    }
+
+    .subnav_list-currentNode {
+        display: none;
+    }
+
+    .show-dropdown {
+        font-weight: $headings-font-weight;
+        margin-bottom: 1.5rem;
+        display: block;
+        margin-top: 1.5rem;
+    }
+}

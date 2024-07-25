@@ -1,0 +1,14 @@
+@mixin headingBorder {
+    background-color: $heading-border-mixin-color;
+    height: rem-calc(4px);
+    width: rem-calc(72px);
+    margin: rem-calc(8px 0 0);
+    content: '';
+    display: block;
+
+    @include media-breakpoint-up(md) {
+        height: rem-calc(8px);
+        margin: rem-calc(24px 0 0);
+        width: rem-calc(160px);
+    }
+}

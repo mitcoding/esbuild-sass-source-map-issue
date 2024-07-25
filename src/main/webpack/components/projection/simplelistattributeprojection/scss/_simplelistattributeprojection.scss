@@ -1,0 +1,73 @@
+.ss- {
+  &listtype-featurelist {
+
+    > ul {
+
+      list-style: none;
+      margin-left: 1.5rem;
+
+      > li {
+
+        font-weight: $font-weight-bold;
+        position: relative;
+
+        &:before {
+          position: absolute;
+          left: -1.25rem;
+          font-family: $font-family-icon-font;
+          font-weight: 300;
+          content: '\f101';
+          color: $primary;
+        }
+
+      }
+
+    }
+
+  }
+
+  &listtype-stacked {
+    > ul {
+      list-style: none;
+      margin: 0;
+
+      > li {
+        margin: 0;
+      }
+    }
+  }
+
+  &listtype-comma-delimited {
+    > ul {
+      list-style: none;
+      margin: 0;
+      
+      > li {
+        display: inline;
+        margin: 0;
+
+        &::after {
+          display: inline;
+          content: ",";
+          margin-left: -.25rem;
+        }
+
+        &:last-of-type::after {
+          content: "";
+          margin: 0;
+        }
+
+        &:last-of-type:not(:first-of-type)::before {
+          content: "or ";
+          margin-left: .25rem;
+        }
+      }
+    }
+  }
+
+  &fontsize-bodylarge {
+    > ul > li {
+      @extend .body-lg;
+    }
+  }
+}

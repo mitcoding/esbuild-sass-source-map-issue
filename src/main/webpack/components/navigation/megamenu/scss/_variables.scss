@@ -1,0 +1,46 @@
+$navbar-item-font:                          $subhead1-font !default;
+$navbar-item-font-size:                     1rem !default;
+$navbar-item-font-size-desktop:             1.25rem !default;
+$navbar-item-font-scaler:                   vw-calc($navbar-item-font-size-desktop) !default;
+$navbar-item-font-weight-desktop:           $font-weight-bold   !default;
+
+$navbar-item-text-color:                    $white !default;
+$navbar-item-text-color-desktop:            $gray-700 !default;
+$navbar-item-text-color-active:             $navbar-item-text-color-desktop !default;
+$navbar-item-text-color-active-mobile:      $navbar-item-text-color !default;
+$navbar-item-text-transform:                none !default;
+$navbar-item-background-color:              transparent !default;
+$navbar-item-bg-color-active:               transparent !default;
+$navbar-item-bg-color-hover-mobile:         transparent !default;
+$navbar-item-separator-color:               $green !default;
+$navbar-item-underline-animation:           none !default;
+$navbar-item-underline-color:               transparent !default;
+$navbar-item-underline-color-active:        $primary !default;
+$navbar-item-underline-color-active-mobile: $primary !default;
+$navbar-item-underline-offset-left:         0 !default;
+$navbar-item-underline-offset-bottom:       0 !default;
+$navbar-item-underline-height:              0.1875rem !default;
+$navbar-item-underline-border-radius:       0 0.1875rem !default;
+
+
+$navbar-title-separator-color:              $navbar-item-separator-color !default;
+
+$navbar-box-shadow:                         none !default;
+
+$navbar-toggle-fg-clr:                      $primary !default;
+$navbar-toggle-bg-clr:                      $gray-100 !default;
+
+$dropdown-spacer:                           0 !default;
+$dropdown-font-line-height:                 false !default;
+$dropdown-font-size:                        0.875rem !default; // 14px if base font 16px
+$dropdown-font-size-desktop:                1rem !default; // 16px if base font 16px
+$dropdown-font-scaler:                      vw-calc($dropdown-font-size-desktop) !default;
+$dropdown-font-weight:                      $font-weight-normal !default;
+
+$dropdown-item-height:                      false !default;
+
+$dropdown-link-align:                       inherit !default;
+$dropdown-link-seperator:                   0 none !default;
+$dropdown-link-transform:                   uppercase !default;
+
+$zindex-dropdown-in-mobile-menu:            0 !default;

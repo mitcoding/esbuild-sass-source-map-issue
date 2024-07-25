@@ -1,0 +1,37 @@
+.btn {
+  &-secondary {
+    &:hover,
+    &:focus {
+      --bs-btn-padding-x: #{$btn-padding-x + $btn-border-width};
+      --bs-btn-padding-y: #{$btn-padding-y + $btn-border-width};
+      --bs-btn-border-width: 0;
+      background-image: linear-gradient(360deg, rgba(39,66,131, 1), rgba(255,255,255, 0));
+    }
+  }
+
+  &-outline-primary {  
+    --bs-btn-color: #{$primary};
+    --bs-btn-bg: #{$white};
+    --bs-btn-border-color: #{$primary};
+    --bs-btn-hover-color: #{$primary};
+    --bs-btn-box-shadow: none;
+    --bs-btn-hover-bg: #{$primary-light};
+    --bs-btn-hover-border-color: #{$primary};
+    --bs-btn-active-color: #{$primary};
+    --bs-btn-active-bg: #C6CEE3;
+    --bs-btn-active-border-color: #{$primary};
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: #{$btn-disabled-fg-clr};
+    --bs-btn-disabled-bg: #{$btn-disabled-bg-clr};
+    --bs-btn-disabled-border-color: #{$btn-disabled-border-color};
+    
+    &:hover,
+    &:focus {
+      background-image: linear-gradient(360deg, rgba(218,222,234, .5), rgba(255,255,255, 1));
+    }
+
+    &:active {
+      background-image: none;
+    }
+  }
+}

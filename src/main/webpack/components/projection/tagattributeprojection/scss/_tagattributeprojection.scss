@@ -1,0 +1,13 @@
+.tagattributeprojection {
+
+  &.ss-style-blocked {
+      display: inline-block;
+      padding: $tag-padding-blocked;
+      background-color: $tag-background-color-blocked;
+      color: $tag-color-blocked;
+      border-radius: $tag-border-blocked;
+      margin-bottom: $tag-margin-bottom-blocked;
+      font-weight: $tag-font-weight-blocked;
+    }
+
+}

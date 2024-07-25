@@ -1,0 +1,146 @@
+.productcards {
+    margin-bottom: $spacer-3x;
+}
+
+.cmp-productcards {
+    &__cards {
+        @extend .grid;
+        margin-top: -1rem;
+
+        &__item {
+            @extend .g-col-xl-3;
+            @extend .g-col-lg-4;
+            @extend .g-col-md-4;
+
+            padding-top: 1rem;
+        }
+
+    }
+
+    &__card {
+        @extend .card;
+
+        box-shadow: $box-shadow-heightened-elevation;
+
+        &__header {
+            @extend .card-header;
+
+            text-align: center;
+
+            /*
+             * Get rid of margin below the p in the header.  There is a p in the header, because we are using a RTE
+             * to enable super and sub script in editing but the RTE wraps things in a paragraph
+             */
+            > h4 {
+                margin-bottom: 0;
+
+                > p:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__title {
+            color: $white;
+        }
+
+        &__content {
+            @extend .card-body;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__asofdate {
+            display: block;
+            margin-bottom: $spacer-1x;
+
+            font: $caption-font;
+            color: $gray-600;
+        }
+
+        &__rate {
+            display: block;
+
+            // The rate is authored using a RTE meaning a p is going to get inserted
+            p {
+                @extend .h1;
+
+                color: $primary;
+            }
+        }
+
+        &__description {
+            // When the cards expand to fill available space we want the description block to be what expands
+            flex-grow: 2;
+            margin-bottom: $spacer-2x;
+
+            > p:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__terms {
+            > .cmp-productcards__card__terms__item {
+                display: block;
+                //margin-bottom: $spacer-1x;
+                margin-bottom: 0;
+
+                .cmp-productcards__card__terms__label {
+                    margin-right: $spacer-1x;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            // Small divider between description and terms.  Only shows if there are terms
+            &:before {
+                display: block;
+                content: "";
+                width: 35%;
+                height: 2px;
+                background-color: $gray-200;
+                margin-bottom: $spacer-2x;
+
+                // Center the divider - the whole card has central text alignment
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        &__footer {
+            @extend.card-footer;
+
+            text-align: center;
+
+            /*
+             * Have to override as Bootstrap uses the same variable for the card header and card footer background
+             */
+            background-color: $gray-100;
+
+            > a {
+                text-decoration: none;
+                font-weight: $font-weight-bold;
+
+                &:hover, &:active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &__cards {
+            justify-content: center;
+        }
+
+        // Same height cards when in a column
+        &__card {
+            height: 100%;
+        }
+    }
+}

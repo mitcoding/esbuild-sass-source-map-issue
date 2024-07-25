@@ -1,0 +1,92 @@
+@charset "utf-8"; // this is  suposed to make sass obey quoted strings for things like font-family";
+
+@import './overrides/bootstrap/colors';
+@import './overrides/bootstrap/spacing';
+
+@import './../../base/scss/base';
+
+@import './overrides/components/variables';
+@import '../../components/variables';
+
+@import './../../base/scss/styles';
+
+// Application
+@import './../../application/contentSearch/scss/contentSearch';
+
+//Content
+@import './../../components/content/horizontalrule/horizontalrule';
+@import './../../components/content/title/scss/title';
+@import './../../components/content/text/scss/text';
+@import './../../components/content/image/scss/image';
+@import './../../components/content/link/scss/link';
+@import './../../components/content/linkcalltoaction/scss/linkcalltoaction';
+@import './../../components/content/icon/scss/icon';
+@import './../../components/content/quotation/scss/quotation';
+@import './../../components/content/list/scss/list';
+@import './../../components/content/logo/scss/logo';
+@import './../../components/content/sharethisbuttons/scss/sharethisbuttons';
+
+//form
+@import './../../components/form/button/scss/button';
+@import './../../components/form/options/scss/options';
+@import './../../components/form/text/scss/text';
+
+/* --- Containers --- */
+// Content
+@import './../../components/content/embed/scss/embed';
+@import './../../components/content/experiencefragment/scss/experiencefragment';
+@import './../../components/content/imagelinklist/scss/imagelinklist';
+@import './../../components/content/statisticlist/scss/statisticlist';
+@import './../../components/content/linklist/scss/linklist';
+@import './../../components/content/genericlist/scss/genericlist';
+
+//form
+@import './../../components/form/container/scss/container';
+
+// Structure
+@import './overrides/components/structure/pageheader/variables';
+@import './../../components/structure/pageheader/scss/pageheader';
+@import './../../components/structure/pagefooter/scss/pagefooter';
+@import './../../components/structure/notificationbar/scss/notificationbar';
+@import './../../components/structure/speedbump/scss/speedbump';
+
+// Layout
+@import './../../components/layout/columnrow/scss/columnrow';
+@import './../../components/layout/tabs/scss/tabs';
+@import './../../components/layout/accordiongroup/scss/accordion';
+@import './../../components/layout/carousel/scss/carousel';
+@import './../../components/layout/modal/scss/modal';
+@import './../../components/layout/experiencefragmentmodal/scss/experiencefragmentmodal';
+
+// Navigation
+@import './../../components/navigation/breadcrumbnavigation/scss/breadcrumbnavigation';
+@import './../../components/navigation/rootedpagenavigation/scss/rootedpagenavigation';
+@import './../../components/navigation/rootedsitesectionnavigation/scss/rootedsitesectionnavigation';
+@import './../../components/navigation/searchbar/scss/searchbar';
+@import './../../components/navigation/interactionchannelnavigation/scss/interactionchannelnavigation';
+@import './../../components/navigation/sociallinks/scss/sociallinks';
+@import './../../components/navigation/loginlink/scss/loginlink.scss';
+@import './../../components/navigation/headersearch/scss/headersearch';
+@import './../../components/navigation/megamenu/scss/megamenunavigation';
+@import './../../components/navigation/megamenu/scss/megamenudropdown.scss';
+
+// Experience
+@import './../../components/pagesection/container/scss/container';
+@import './../../components/pagesection/pagesection/scss/pagesection';
+@import './../../components/pagesection/pagehero/scss/pagehero';
+@import './../../components/pagesection/pagesectionprojection/scss/pagesectionprojection';
+
+// Projection
+@import './../../components/projection/teaser/scss/teaser';
+@import './../../components/projection/teaserlist/scss/teaserlist';
+@import './../../components/projection/referencelistprojection/scss/referencelistprojection';
+@import './../../components/projection/singlesimpleattributeprojection/scss/singlesimpleattributeprojection';
+@import './../../components/projection/simplelistattributeprojection/scss/simplelistattributeprojection';
+@import './../../components/projection/embedattributeprojection/scss/embedattributeprojection';
+@import './../../components/projection/tagattributeprojection/scss/tagattributeprojection';
+@import './../../components/projection/emaillinkattributeprojection/scss/emaillinkattributeprojection';
+@import './../../components/projection/telephonelinkattributeprojection/scss/telephonelinkattributeprojection';
+@import './../../components/projection/googlemaplinkprojection/scss/googlemaplinkprojection';
+
+// Style System always define last so it has highest specificity
+@import './../../base/scss/style-system/style-system';

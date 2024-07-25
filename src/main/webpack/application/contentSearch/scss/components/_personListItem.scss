@@ -1,0 +1,210 @@
+
+.cmp-search-results-listing__item.cmp-search-results-listing__item-person {
+
+  padding-bottom: $spacer-3x;
+  border-bottom: 1px solid $gray-200;
+
+  .cmp-content-search-person-list-item {
+    width: 100%;
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    // Image treatment
+    &__img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $spacer-3x;
+
+      &.has-background {
+        display: none;
+      }
+    }
+
+    &__img {
+      &.headshot {
+        max-width: $grid-unit * 20;
+        width: auto;
+        border-radius: 50%;
+      }
+    }
+
+    &__background-image {
+      margin-left: $spacer-4x * -1;
+      margin-top: $spacer-4x * -1;
+      margin-right: $spacer-4x * -1;
+      margin-bottom: $spacer-2x;
+      height: 8rem;
+      background-size: cover;
+      background-position: top center;
+    }
+
+    // Description area treatment
+    &__description-wrap {
+      text-align: center;
+      flex-grow: 2;
+    }
+
+    &__description {
+      &-title {
+        color: $primary;
+        margin-bottom: $spacer-2x;
+      }
+
+      &-txt {
+        margin-bottom: 0;
+        font: $body-font;
+      }
+    }
+
+    &__details {
+      margin: 0;
+
+      &__position {
+        margin-bottom: $spacer-3x;
+      }
+
+    }
+
+    &__detail {
+      &--location {
+        margin-bottom: $spacer-3x;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+
+    // Buttons
+    &__btn-wrap {
+      display: flex;
+      column-gap: $spacer-3x;
+      row-gap: $spacer-2x;
+      justify-content: flex-end;
+      margin-top: $spacer-3x;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__btn {
+      @extend .btn;
+      @extend .btn-primary;
+      text-decoration: none;
+      width: 100%;
+      letter-spacing: 0.084rem;
+
+      &--low-emphasis {
+        background-color: $white;
+        color: $primary;
+
+        &:hover {
+          cursor: pointer;
+          color: $primary;
+          background-color: $gray-200;
+        }
+
+        &--disabled{
+          display: none;
+        }
+      }
+    }
+
+    // Google address handling
+    &__address-link {
+      text-decoration: none;
+
+      &__address-segment {
+        display: block;
+      }
+    }
+
+  }
+
+}
+
+@include media-breakpoint-up(md) {
+
+  /*
+   * The non-mobile styles are only applied in list view.  When in grid view (for people cards) the mobile styles
+   * apply.
+   */
+  .cmp-search-results-container {
+    .listing-list {
+      .cmp-search-results-listing__item.cmp-search-results-listing__item-person {
+
+        .cmp-content-search-person-list-item {
+          &__wrap {
+            flex-direction: row;
+            column-gap: $spacer-3x;
+            align-items: stretch;
+          }
+
+          &__img-wrap {
+            margin-right: $spacer-3x;
+            max-width: 40%;
+
+            // We always show the headshot on non-mobile and hide the banner
+            &.has-background {
+              display: block;
+            }
+          }
+
+          &__background-image {
+            display: none;
+          }
+
+          &__description-wrap {
+            text-align: left;
+          }
+
+          &__btn-wrap {
+            flex-direction: row;
+            align-items: flex-end;
+            width: auto;
+          }
+
+          &__btn {
+            width: auto;
+          }
+
+          &__details {
+            display: flex;
+            flex-direction: row;
+            column-gap: $spacer-3x;
+            flex-wrap: nowrap;
+
+            &__position {
+              margin-bottom: 0;
+            }
+
+            &__location {
+              margin-bottom: 0;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+/*
+ * Styling for grid view - used for people cards
+ */
+.cmp-search-results-container {
+  .listing-grid {
+    .cmp-search-results-listing__item.cmp-search-results-listing__item-person {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+

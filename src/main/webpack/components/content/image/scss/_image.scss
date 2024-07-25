@@ -1,0 +1,24 @@
+.image {
+    margin-bottom: 24px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 40px;
+    }
+
+    .cmp-image {
+      &__image {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+        
+    &.ss-imagewidth-full {
+      width: 100%;
+      margin-bottom: 0;
+  
+      img {
+        width: 100%;
+      }
+    }
+}

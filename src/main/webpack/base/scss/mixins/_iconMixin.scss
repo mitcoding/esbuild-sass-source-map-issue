@@ -1,0 +1,10 @@
+@mixin font-icon($content, $font-family: $font-family-icon-font) {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-family;
+  font-weight: 900;
+  content: $content;
+}

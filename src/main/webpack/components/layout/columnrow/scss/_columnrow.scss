@@ -1,0 +1,111 @@
+body {
+    --bs-gap: 2rem 1rem;
+
+    @include media-breakpoint-up(sm) {
+            --bs-gap: 2rem;   
+    }
+}
+
+.columnrow {        
+     .cmp-columnrow {
+        padding-top: $columnrow-margin-top * -1;
+        margin-top: $columnrow-margin-top;
+
+        &__column {
+            position: relative;
+        
+            img {
+                max-width: 100%;
+            }
+
+            /*
+             * The last component in a column has it's bottom margin removed
+             * so that the columns contol the spacing
+             */
+            > :last-child {
+                margin-bottom: 0;
+                
+                > * {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-top: $columnrow-margin-top-desktop * -1;
+            margin-top: $columnrow-margin-top-desktop;
+        }
+    }
+
+    &.ss-verticalalignment-middle {
+        .cmp-columnrow__column {
+            display: grid;
+            align-items: center;
+        }
+    }
+
+    &.ss-verticalalignment-bottom {
+        .cmp-columnrow__column {
+            display: grid;
+            align-items: end;
+        }
+    }
+
+    &.ss-full-height-content {
+        .cmp-columnrow__column {
+            display: grid;
+            align-items: stretch;
+        }
+    }
+
+    &.ss-aem-grid--mp-0 {
+        > .cmp-columnrow {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &.ss-aem-grid--m-0 {
+        > .cmp-columnrow {
+            padding-top: 0;
+            margin: 0;
+        }
+    }
+
+    &.ss-aem-grid--p-0 {
+        > .cmp-columnrow {
+            padding: 0;
+            margin-top: 0;
+        }    
+    }
+}
+
+/*
+ * When a Column Row is placed within a Layout Container it will have a non-0 margin-bottom rule unless it is
+ * the last component in the layout container
+ */
+.aem-Grid {
+    > .columnrow {
+        margin-bottom: $columnrow-margin-bottom;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: $columnrow-margin-bottom-desktop;
+        }
+
+        &.ss-aem-grid--mp-0 {
+            margin-bottom: 0;
+        }
+        
+        &.ss-aem-grid--m-0 {
+            margin-bottom: 0;
+        }
+    }
+
+    > :last-child {
+        margin-bottom: 0;
+
+        > * {
+            margin-bottom: 0;
+        }
+    }
+}

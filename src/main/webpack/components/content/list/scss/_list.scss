@@ -1,0 +1,115 @@
+.list {
+
+    // List Type Styles
+    &.ss-listitemstyle-none {
+        > ul {
+            list-style: none;
+            margin-left: 0;
+        }
+    }
+
+    &.ss-listitemstyle-disc {
+        > ul {
+            list-style: disc;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-circle {
+        > ul {
+            list-style: circle;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-square {
+        > ul {
+            list-style: square;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-decimal {
+        > ul {
+            list-style: decimal;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-loweralpha {
+        > ul {
+            list-style: lower-alpha;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-display-buttonNavigation {
+        .cmp-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .cmp-list__item {
+                margin-bottom: rem-calc(24px);
+
+                .cmp-list__item-link {
+                    border: rem-calc(2px) solid $teal;
+                    color: $teal;
+                    display: block;
+                    font-size: rem-calc(17px);
+                    font-weight: 600;
+                    line-height: 1.18;
+                    letter-spacing: rem-calc(0.17px);
+                    padding: rem-calc(16px);
+
+                    > span {
+                        align-items: center;
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: space-between;
+                        width: 100%;
+                        @include rightCaret($teal);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .list {
+        &.ss-display-buttonNavigation {
+            .cmp-list {
+    
+                .cmp-list__item {
+                    margin-bottom: rem-calc(40px);
+                    margin-right: rem-calc(40px);
+    
+                    .cmp-list__item-link {
+                        border: rem-calc(3px) solid $teal;
+                        box-shadow: rem-calc(4px 4px 6px 0) rgba(0, 0, 0, 0.1);
+                        font-size: rem-calc(32px);
+                        font-weight: 600;
+                        line-height: 1.25;
+                        letter-spacing: rem-calc(0.32px);
+                        padding: rem-calc(32px);
+    
+                        > span {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: space-between;
+                            @include rightCaret($teal);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.ss-layout-flex {
+            .cmp-list {
+                display: flex;
+                flex-flow: row wrap;
+            }
+        }
+    }
+}

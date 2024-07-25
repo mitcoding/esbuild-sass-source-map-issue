@@ -1,0 +1,52 @@
+.statisticlist {
+
+    &_list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+
+        &-item {
+            margin-bottom: 50px;
+            width: 170px;
+
+            a {
+                color: $text-standard;
+
+                &:hover {
+                    color: $text-standard;
+                }
+            }
+
+            &_title {
+                color: $primary;
+                font-family: Helvetica, sans-serif;
+                font-size: 2rem;
+                font-weight: $font-weight-bold;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            &_desc {
+                font-size: 1rem;
+                line-height: 1.38;
+                color: $text-standard;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .statisticlist {
+        &_list {
+            
+
+            &-item {
+                width: 190px;
+            }
+        }
+    }
+}

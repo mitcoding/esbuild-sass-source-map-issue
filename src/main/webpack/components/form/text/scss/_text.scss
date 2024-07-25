@@ -1,0 +1,154 @@
+@use 'sass:math';
+
+.text {
+  &.mb-0 {
+    .cmp-form-text {
+      margin-bottom: math.div($spacer, 4);
+    }
+  }
+  
+  &.mb-1 {
+    .cmp-form-text {
+      margin-bottom: $spacer;
+    }
+    
+  }
+  
+  &.mb-2 {
+    .cmp-form-text {
+      margin-bottom: $spacer * 2;
+    }
+  }
+  
+  &.mb-3 {
+    .cmp-form-text {
+      margin-bottom: $spacer * 3;
+    }
+  }
+  
+  &.mb-4 {
+    .cmp-form-text {
+      margin-bottom: $spacer * 4;
+    }
+  }
+  
+  &.mb-5 {
+    .cmp-form-text {
+      margin-bottom: $spacer * 5;
+    }
+  }
+}
+
+.cmp-form-text {
+    position: relative;
+    flex-flow: column nowrap;
+    margin-bottom: $spacer;
+    min-height: $spacer * 5;
+    display: flex;
+    justify-content: flex-end;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+
+    }
+    label {
+        display: grid;
+        text-align: left;
+        padding-bottom: 0.5rem;
+        padding-top: 0;
+        align-content: center;
+        @include media-breakpoint-down(xl){
+            font-size: rem-calc($font-size-base * 0.75); // 12px
+        }
+        
+        &.required {
+          grid-template-columns: math.div($spacer, 1.77777778) auto;
+        }
+        
+        .cmp-form-text__required {
+          color: $red;
+        }
+    }
+
+    input,
+    textarea,
+    &__textarea,
+    &__text {
+        border: 1px solid $gray-200;
+        background-color: $white;
+        border-radius: 0;
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        @supports (-webkit-touch-callout: none) {
+            /* iOS devices */ 
+            font-size: 16px;
+        }
+        &::placeholder {
+            color: $gray-200;
+        }
+        &:focus, 
+        &:focus-visible {
+            border: 1px solid $primary;
+            outline: none;
+        }
+        &.input-error {
+            background: rgba($red, 0.04);
+            border: 1px solid $red;
+            color: $red;
+        }
+    }
+
+    input[type='number'] {
+        font-size: 1rem;
+        border: 1px solid $white;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: $black;
+        width: 100%;
+        outline: none;
+        padding: 0.5rem 1rem;
+        background-color: $white;
+        &:focus {
+            border: 1px solid $primary;
+        }
+    }
+
+    input[aria-label="disabled input"] {
+        &:focus {
+            border: 1px solid $gray-600;
+        }
+    }
+
+    &.form-floating {
+        >.form-control,
+        .form-select {
+            height: auto;
+        }
+
+        >.form-control:focus~label,
+        >.form-control:not(:placeholder-shown)~label,
+        >.form-select~label {
+            transform: scale(.85) translateY(0) translateX(.15rem);
+            padding-top: $spacer * 0.25;
+            margin: 0;
+            width: 116%;
+            line-height: .85rem;
+            align-content: flex-start;
+        }
+        >.form-control:focus,
+        >.form-control:not(:placeholder-shown) {
+            padding-top: $spacer * 1.625;
+            padding-bottom: $spacer * 0.25;
+        }
+    }
+    
+    .smarty-ui {
+      position: absolute;
+      top: $spacer-6x;
+      right: $spacer-2x;
+    }
+}

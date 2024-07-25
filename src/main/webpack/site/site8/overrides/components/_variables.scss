@@ -1,0 +1,22 @@
+@use "sass:list";
+
+/* --- Page Header --- */
+$pageheader-navbar-bg-color-desktop:         $primary;
+$pageheader-navbar-height:                   3rem;
+
+$navbar-item-font:                           $font-weight-normal list.slash($navbar-item-font-size-desktop, 1.875rem) $font-family-base;
+$navbar-item-font-weight-desktop:            $font-weight-normal;
+$navbar-item-text-color-desktop:             $white;
+$navbar-item-text-color-active:              $navbar-item-text-color-desktop;
+$navbar-item-text-transform:                 uppercase;
+$navbar-item-bg-color-active:                $primary-dark;
+$navbar-item-bg-color-hover-mobile:          $navbar-item-bg-color-active;
+$navbar-item-underline-color-active:         $secondary;
+$navbar-item-underline-color-active-mobile:  $navbar-item-underline-color-active;
+
+$navbar-toggle-bg-clr:                       $gray-300;
+
+/* --- Accordion --- */
+$extend-accordion-header-size:                ".body-md";
+$extend-accordion-body-size:                  ".body-reg";
+$accordion-header-font-size:                  $body-md-font-size-desktop; 

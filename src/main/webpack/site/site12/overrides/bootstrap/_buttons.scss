@@ -1,0 +1,5 @@
+.btn {
+  &[class*="btn-outline-"] {
+    --bs-btn-color: inherit;
+  }
+}

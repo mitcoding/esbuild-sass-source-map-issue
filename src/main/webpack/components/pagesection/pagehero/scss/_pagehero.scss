@@ -1,0 +1,118 @@
+.pagehero {
+    > .cmp-pagesection {
+        padding: $pagesection-spacing-vertical;
+
+        @include media-breakpoint-up(lg) {
+            padding: $pagesection-spacing-vertical-lg;
+        }
+    }
+
+    &.ss {
+        &-contentcontainersize-full {
+            >.cmp-pagesection {
+                padding: 0;
+            }
+        }
+
+        &-hero-hide-mobile {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+
+        &-heroheight {
+            &-ribbon {
+                > .cmp-pagesection {
+                    padding-top: $pagesection-spacing-vertical-ribbon;
+                    padding-bottom: $pagesection-spacing-vertical-ribbon;
+    
+                    @include media-breakpoint-up(lg) {
+                        padding-top: $pagesection-spacing-vertical-ribbon-lg;
+                        padding-bottom: $pagesection-spacing-vertical-ribbon-lg;
+                    }
+                }
+            }
+
+            &-short {
+                > .cmp-pagesection  {
+                    padding-top: $pagesection-spacing-vertical-short;
+                    padding-bottom: $pagesection-spacing-vertical-short;
+
+                    @include media-breakpoint-up(lg) {
+                        padding-top: $pagesection-spacing-vertical-short-lg;
+                        padding-bottom: $pagesection-spacing-vertical-short-lg;
+                    }
+                }
+            }
+
+            &-verytall {
+                > .cmp-pagesection {
+                    padding-top: $pagesection-spacing-vertical-verytall;
+                    padding-bottom: $pagesection-spacing-vertical-verytall;
+
+                    @include media-breakpoint-up(lg) {
+                        padding-top: $pagesection-spacing-vertical-verytall-lg;
+                        padding-bottom: $pagesection-spacing-vertical-verytall-lg;
+                    }
+                }
+            }
+
+            &-tall {
+                > .cmp-pagesection {
+                    padding-top: $pagesection-spacing-vertical-tall;
+                    padding-bottom: $pagesection-spacing-vertical-tall;
+
+                    @include media-breakpoint-up(lg) {
+                        padding-top: $pagesection-spacing-vertical-tall-lg;
+                        padding-bottom: $pagesection-spacing-vertical-tall-lg;
+                    }
+                }
+            }
+        }
+
+        &-herowidth {
+            &-full {
+                > .cmp-pagesection {
+                    padding: 0;
+                }
+            }
+
+            &-narrow {
+                > .cmp-pagesection {
+                    padding-left: $pagesection-spacing-horizontal-narrow;
+                    padding-right: $pagesection-spacing-horizontal-narrow;
+                    background-color: red;
+
+                    @include media-breakpoint-up(lg) {
+                        padding-left: $pagesection-spacing-horizontal-narrow-lg;
+                        padding-right: $pagesection-spacing-horizontal-narrow-lg;
+                    }
+                }
+            }
+
+            &-wide {
+                > .cmp-pagesection {
+                    padding-left: $pagesection-spacing-horizontal-wide;
+                    padding-right: $pagesection-spacing-horizontal-wide;
+
+                    @include media-breakpoint-up(lg) {
+                        padding-left: $pagesection-spacing-horizontal-wide-lg;
+                        padding-right: $pagesection-spacing-horizontal-wide-lg;
+                    }
+                }
+            }
+
+            &-verywide {
+                > .cmp-pagesection {
+                    padding-left: $pagesection-spacing-horizontal-verywide;
+                    padding-right: $pagesection-spacing-horizontal-verywide;
+
+                    @include media-breakpoint-up(lg) {
+                        padding-left: $pagesection-spacing-horizontal-verywide-lg;
+                        padding-right: $pagesection-spacing-horizontal-verywide-lg;
+                    }
+                }
+            }
+        }
+    }
+}

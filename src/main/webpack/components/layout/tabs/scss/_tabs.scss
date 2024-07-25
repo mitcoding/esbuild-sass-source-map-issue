@@ -1,0 +1,89 @@
+.tabs {
+    margin-bottom: $component-common-margin-bottom;
+}
+
+.cmp-tabs {
+    &__tablist {
+        display: flex;
+        column-gap: $spacer-2x;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+        margin-bottom: $spacer-4x;
+    }
+
+    &__tab {
+        font: $caption-font;
+        padding: $spacer-1x;
+        margin-bottom: 0;
+        color: $primary;
+        background-color: transparent;
+        transition: .15s;
+        border-bottom: .125rem solid $gray-400;
+        text-transform: uppercase;
+
+        &:hover,
+        &--active {
+            border-bottom: .125rem solid $primary;
+        }
+    }
+}
+
+.conditionaltabprojectioncontainer {
+    &.ss- {
+        &foo-tmc-tabs {
+            .nav-link {
+                --bs-nav-link-color: $tertiary;
+                --bs-nav-link-hover-color: $tertiary;
+                --bs-nav-tabs-border-color: transparent;
+                --bs-nav-tabs-link-hover-border-color: transparent;
+                --bs-nav-tabs-link-active-color: $tertiary;
+                --bs-nav-tabs-link-active-bg: transparent;
+                --bs-nav-tabs-link-active-border-color: transparent transparent #{$primary} transparent;
+                
+                font-weight: 600;
+                padding: 0 0 1rem 0;
+                border-width: 0 0 .25rem 0;
+                border-radius: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 0;
+                
+                @include clampShim("font-size", 0.875rem, vw-calc(1.4rem), 1.5rem);
+                @include clampShim("margin-right", 1rem, vw-calc(3rem), 3rem);
+
+                @include media-breakpoint-up(md) {
+                    font-weight: var(--bs-nav-link-font-weight);
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }    
+        }
+    }
+
+    > .cmp-conditionaltabprojectioncontainer {
+        > nav {
+            padding: 0 0 1.5rem;
+        }
+        
+        .cmp-tabs {
+            &__tab {
+                @extend .nav-link;
+                text-transform: inherit;
+
+                &--active {
+                    @extend .active;
+                }
+            }
+            &__tabpanel {
+                &--active {
+                    @extend .show;
+                    @extend .active;
+                }    
+            }
+        }
+    }
+}

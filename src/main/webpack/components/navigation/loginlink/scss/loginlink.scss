@@ -1,0 +1,133 @@
+.cmp-loginlink {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-down(md) {
+    margin-left: auto;
+  }
+
+  &__caption { 
+    font: $caption-font;
+  }
+
+  &__content {
+    position: absolute;
+    top: 4.5rem;
+    right: -2.5rem;
+    width: 17.188rem;
+    background: $white;
+    border: 0.06rem solid $primary;
+    border-top: 0.25rem solid $primary;
+    padding: $spacer-1x;
+
+    &--closed {
+      display: none;
+    }
+
+    &:before {
+      content: '\f0d8';
+      position: absolute;
+      font-family: $font-family-icon-font;
+      font-weight: 900;
+      top: -1.125rem;
+      left: 65%;
+      color: $primary;
+    }
+  }
+
+  &__main-btn {
+    display: flex;
+    align-content: flex-start;
+    width: fit-content;
+    padding: $spacer-1x $spacer-2x;
+    border-radius: 0.25rem;
+    box-shadow: none;
+    border-bottom: 0.06rem solid $primary;
+  }
+
+  &__main-btn-txt{
+    &:before{
+      content: '\f023';
+      font-family: $font-family-icon-font;
+      font-weight: 600;
+      color: $white;
+      margin-right: $spacer-1x;
+    }
+  }
+
+  &__enroll-links { 
+    display: flex;
+    flex-direction: column;
+    border-top: 0.06rem solid $gray-400;
+    padding-top: $spacer-2x;
+    margin-top: $spacer-2x;
+  }
+
+  &__enroll-link-wrap { 
+    display: flex;
+    gap: $spacer-1x;
+  }
+
+  &__enroll-link-txt {
+    font: $caption-font;
+    font-weight: 900;
+    color: $gray-600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__select-label-txt { 
+    font: $body-font;
+    font-weight: 100;
+  }
+
+  &__select-label { 
+    position: relative;
+
+    &:after{
+      content: '\f0d7';
+      position: absolute;
+      right: 0.75rem;
+      font-family: $font-family-icon-font;
+      font-weight: 900;
+      top: 1.875rem;
+      font-size: 1.5rem;
+      color: $gray-700;
+    }
+  }
+
+  &__form-submit-action {
+    width: 100%;
+    margin-top: $spacer-2x;
+    margin-bottom: $spacer-2x;
+    text-decoration: none;
+
+    &:before{
+      content: '\f35d';
+      color: $white;
+      font-family: $font-family-icon-font;
+      font-weight: 900;
+      margin-right: $spacer-1x;
+    }
+  }
+
+  &__select-input { 
+    background-color: $white;
+    padding-right: $spacer-4x;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+
+  .js-enroll-links--closed {
+    display: none;
+  }
+}
+
+.loginlink {
+  margin-left: auto;
+
+  .cmp-loginlink__content .cmp-loginlink__enroll-links {
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,463 @@
+.icon {
+    margin-bottom: $icon-margin-bottom;
+    
+    .cmp-icon {
+        width: 100%;
+
+        &__container {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: first baseline;
+            flex-direction: row;
+        }
+
+        &__description {
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__image {
+            width: auto;
+            height: auto;
+            position: relative;
+        }
+    
+        &__font-icon {
+            display: flex;
+            position: relative;
+            font-size: $icon-fonticon-font-size;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: auto;
+        }
+
+        &__link {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &__text {
+            margin: 0 0 0 ($grid-unit * 2 * $icon-spacing-basis);
+
+            h4 {
+                margin-bottom: $grid-unit * $icon-spacing-basis;
+            }
+        }
+    }
+
+    &.ss-alignment-center {
+        &.ss-icon-small{
+            .cmp-icon__image {
+                bottom: 34.5px;
+                margin-bottom: -34.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 34.5px;
+                margin-bottom: -34.5px;
+            }
+        }
+    
+        &.ss-icon-medium{
+            .cmp-icon__image {
+                bottom: 38.5px;
+                margin-bottom: -38.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 38.5px;
+                margin-bottom: -38.5px;
+            }
+        }
+    
+        &.ss-icon-big{
+            .cmp-icon__image {
+                bottom: 58.5px;
+                margin-bottom: -58.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 58.5px;
+                margin-bottom: -58.5px;
+            }
+        }
+
+        .cmp-icon__container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            align-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 2rem;
+            margin-bottom: -1rem;
+        }
+
+        .cmp-icon__text {
+            margin: 0;
+            padding: 1rem;
+        }
+    }
+
+    &.ss-alignment-left {
+        &.ss-icon-small{
+            .cmp-icon__image {
+                bottom: 34.5px;
+                margin-bottom: -34.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 34.5px;
+                margin-bottom: -34.5px;
+            }
+        }
+    
+        &.ss-icon-medium{
+            .cmp-icon__image {
+                bottom: 38.5px;
+                margin-bottom: -38.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 38.5px;
+                margin-bottom: -38.5px;
+            }
+        }
+    
+        &.ss-icon-big{
+            .cmp-icon__image {
+                bottom: 58.5px;
+                margin-bottom: -58.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 58.5px;
+                margin-bottom: -58.5px;
+            }
+        }
+
+        .cmp-icon__container {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            align-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-top: 2rem;
+            margin-bottom: -1rem;
+    
+            .cmp-icon__image {
+                padding-left: 1rem;
+            }
+    
+            .cmp-icon__font-icon {
+                margin-left: 1rem;
+            }
+        }
+
+        .cmp-icon__text {
+            margin: 0;
+            padding: 1rem;
+        }
+    }
+
+    &.ss-alignment-right {
+        &.ss-icon-small{
+            .cmp-icon__image {
+                bottom: 34.5px;
+                margin-bottom: -34.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 34.5px;
+                margin-bottom: -34.5px;
+            }
+        }
+    
+        &.ss-icon-medium{
+            .cmp-icon__image {
+                bottom: 38.5px;
+                margin-bottom: -38.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 38.5px;
+                margin-bottom: -38.5px;
+            }
+        }
+    
+        &.ss-icon-big{
+            .cmp-icon__image {
+                bottom: 58.5px;
+                margin-bottom: -58.5px;
+            }
+    
+            .cmp-icon__font-icon {
+                bottom: 58.5px;
+                margin-bottom: -58.5px;
+            }
+        }
+        
+        .cmp-icon__container {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: nowrap;
+            align-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            margin-top: 2rem;
+            margin-bottom: -1rem;
+    
+            .cmp-icon__image {
+                padding-right: 1rem;
+            }
+    
+            .cmp-icon__font-icon {
+                margin-right: 1rem;
+            }
+        }
+
+        .cmp-icon__text {
+            margin: 0;
+            padding: 1rem;
+        }
+    }
+
+    &.ss-icon-small {
+        .cmp-icon__image {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            min-width: initial;
+            max-width: initial;
+        }
+    
+        .cmp-icon__font-icon {
+            font-size: 0.75rem;
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+            min-width: initial;
+            max-width: initial;
+        }
+    }
+
+    &.ss-icon-medium {
+        .cmp-icon__image {
+            flex: 0 0 32px;
+            width: 32px;
+            height: 32px;
+            min-width: initial;
+            max-width: initial;
+        }
+    
+        .cmp-icon__font-icon {
+            font-size: 1.25rem;
+            flex: 0 0 32px;
+            width: 32px;
+            height: 32px;
+            min-width: initial;
+            max-width: initial;
+        }
+    }
+
+    &.ss-icon-big {
+        .cmp-icon__image {
+            flex: 0 0 72px;
+            width: 72px;
+            height: 72px;
+            min-width: initial;
+            max-width: initial;
+        }
+    
+        .cmp-icon__font-icon {
+            font-size: 2.5rem;
+            flex: 0 0 72px;
+            width: 72px;
+            height: 72px;
+            min-width: initial;
+            max-width: initial;
+        }
+    }
+}
+
+.ss {
+    &-bar-bg {
+        &--none {
+            .cmp-icon__container::before {
+                display: block;
+                position: relative;
+                content: "";
+                width: 100%;
+                height: 45px;
+                background: none;
+            }
+        }
+
+        @each $name,
+        $color in $theme-colors {
+            &--#{$name} {
+                .cmp-icon__container::before {
+                    display: block;
+                    opacity: 0.2;
+                    position: relative;
+                    content: "";
+                    width: 100%;
+                    height: 45px;
+                    background: hsla(hue($color), saturation($color), var(--foo-bar-bg-lum, lightness($color) ), var(--foo-bar-bg-alpha, alpha($color) ) );
+                }
+            }
+        }
+
+        &-lum {
+            @each $name,
+            $lumanence in $lumanences {
+                &--#{$name} {
+                    --foo-bar-bg-lum: calc(#{$lumanence} + var(--foo-bar-bg-lum-inc, 0%) );
+                }
+            }
+
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name}0 {
+                        --foo-bar-bg-lum-inc: #{$value};
+                    }
+                }
+            }
+        }
+
+        &-alpha {
+            @each $name,
+            $opacitiy in $opacities {
+                &--#{$name} {
+                    --foo-bar-bg-alpha: calc(#{$opacitiy} + var(--foo-bar-bg-alpha-inc, 0%) );
+                }
+            }
+
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name} {
+                        --foo-bar-bg-alpha-inc: #{$value};
+                    }
+                }
+            }
+        }
+    }
+
+    &-cir-bg {
+        &--none {
+            .cmp-icon__font-icon {
+                display: flex;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+                background: none;
+                border-radius: 50%;
+            }
+        }
+
+        @each $name,
+        $color in $theme-colors {
+            &--#{$name} {
+                .cmp-icon__font-icon {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-content: center;
+                    justify-content: center;
+                    align-items: center;
+                    background: hsla(hue($color), saturation($color), var(--foo-cir-bg-lum, lightness($color) ), var(--foo-cir-bg-alpha, alpha($color) ) );
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &-lum {
+            @each $name,
+            $lumanence in $lumanences {
+                &--#{$name} {
+                    --foo-cir-bg-lum: calc(#{$lumanence} + var(--foo-cir-bg-lum-inc, 0%) );
+                }
+            }
+
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name}0 {
+                        --foo-cir-bg-lum-inc: #{$value};
+                    }
+                }
+            }
+        }
+
+        &-alpha {
+            @each $name,
+            $opacitiy in $opacities {
+                &--#{$name} {
+                    --foo-cir-bg-alpha: calc(#{$opacitiy} + var(--foo-cir-bg-alpha-inc, 0%) );
+                }
+            }
+
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name} {
+                        --foo-cir-bg-alpha-inc: #{$value};
+                    }
+                }
+            }
+        }
+    }
+
+    &-i-fg {
+        @each $name,
+        $color in $theme-colors {
+            &-clr--#{$name} {
+                .cmp-icon__font-icon {
+                    color: hsla(hue($color), saturation($color), var(--foo-i-fg-lum, lightness($color) ), var(--foo-i-fg-alpha, alpha($color) ) );
+                }
+            }
+        }
+
+        &-lum {
+            @each $name,
+            $lumanence in $lumanences {
+                &--#{$name} {
+                    --foo-i-fg-lum: calc(#{$lumanence} + var(--foo-i-fg-lum-inc, 0%) );
+                }
+            }
+
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name}0 {
+                        --foo-i-fg-lum-inc: #{$value};
+                    }
+                }
+            }
+        }
+
+        &-alpha {
+            @each $name,
+            $opacitiy in $opacities {
+                &--#{$name} {
+                    --foo-i-fg-alpha: calc(#{$opacitiy} + var(--foo-i-fg-alpha-inc, 0%) );
+                }
+            }
+
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name} {
+                        --foo-i-fg-alpha-inc: #{$value};
+                    }
+                }
+            }
+        }
+    }
+}

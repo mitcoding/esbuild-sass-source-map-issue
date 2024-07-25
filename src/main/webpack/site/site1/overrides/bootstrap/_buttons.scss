@@ -1,0 +1,18 @@
+.btn {
+  &-outline-tertiary {
+    --bs-btn-color: #{$tertiary};
+    --bs-btn-bg: #{$white};
+    --bs-btn-border-color: #{$tertiary};
+    --bs-btn-hover-color: #{$tertiary-dark};
+    --bs-btn-box-shadow: none;
+    --bs-btn-hover-bg: #{$white};
+    --bs-btn-hover-border-color: #{$tertiary-dark};
+    --bs-btn-active-color: #{$tertiary-dark};
+    --bs-btn-active-bg: #{tint-color($tertiary, 86%)};
+    --bs-btn-active-border-color: #{$tertiary-dark};
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: #{$btn-disabled-fg-clr};
+    --bs-btn-disabled-bg: #{$btn-disabled-bg-clr};
+    --bs-btn-disabled-border-color: #{$btn-disabled-border-color};
+  }
+}

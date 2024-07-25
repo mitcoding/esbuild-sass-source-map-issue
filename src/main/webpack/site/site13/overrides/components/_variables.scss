@@ -1,0 +1,28 @@
+@use "sass:list";
+
+$navbar-item-font-size:               0.875rem;
+$navbar-item-font-size-desktop:       1.0rem;
+$navbar-item-font-scaler:             vw-calc($navbar-item-font-size-desktop);
+$navbar-item-font:                    $font-weight-normal list.slash($navbar-item-font-size-desktop, 1.875rem) $font-family-base;
+
+$navbar-item-text-color:              $white;
+$navbar-item-text-color-desktop:      $white;
+$navbar-item-text-color-active:       $white;
+$navbar-item-underline-color-active:  $tertiary;
+
+$navbar-toggle-bg-clr:                $gray-300;
+
+$dropdown-bg:                                    $primary;
+
+$dropdown-font-size:                              0.75rem; //12px if base font is 16
+$dropdown-font-size-desktop:                      0.875rem; //14px if base font is 16px
+$dropdown-font-scaler:                           vw-calc($dropdown-font-size-desktop);
+$dropdown-font-weight:                           bold;
+
+$dropdown-link-align:                            center;
+$dropdown-link-color:                            $white;
+$dropdown-link-hover-color:                      $primary;
+$dropdown-link-hover-bg:                         $primary-lightest;
+$dropdown-link-transform:                        none;
+
+$dropdown-spacer:                                 0.0;

@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@function viewPortWidth-calc($value, $scaler) {
+  $vw: math.div(strip-unit($scaler), 100);
+  @return math.div(px-calc($value), $vw);
+}

@@ -1,0 +1,99 @@
+.notificationbar {
+    margin-bottom: 0;
+
+    .cmp-notificationbar {    
+        margin-bottom: 0;
+        padding: $spacer-2x;
+    
+        background: rgba(255, 236, 181, 0.7);
+        border-radius: 4px;
+
+        &[data-dismissible] {
+            display: none;
+        }
+    
+        &__content {
+            display: flex;
+            flex-direction: row;
+            column-gap: $spacer-2x;
+            align-items: center;
+    
+            .notification-type-icon {
+                line-height: 1;
+                display: inline-block;
+    
+                &:after {
+                    // info circle
+                    @include font-icon('\f05a', $font-family-icon-font);
+                }
+            }
+        }
+    
+        &__paragraph {
+            flex-grow: 2;
+    
+            font: $notification-font-sans;
+    
+            > p:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    
+        &__dismiss {
+            cursor: pointer;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            text-align: left;
+            text-shadow: 0 1px 0 #fff;
+            background: unset;
+            width: auto;
+            padding: 0;
+            
+            &::before {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+        }
+    }
+
+    &.ss-notificationlevel-success {
+
+        .cmp-notificationbar {
+            background-color: rgba(20, 128, 81, 0.7);
+            color: $primary;
+
+            &__content {
+                .notification-type-icon {
+                    &:after {
+                        @include font-icon('\f00c', $font-family-icon-font);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.ss-notificationlevel-error {
+
+        .cmp-notificationbar {
+            background: rgba(176, 0, 32, 0.7);
+            color: rgb(179, 0, 30);
+
+            &__content {
+                .notification-type-icon {
+                    &:after {
+                        @include font-icon('\f06a', $font-family-icon-font);
+                    }
+                }
+            }
+        }
+
+    }
+
+    /* Allow General Background Style System to be applied */
+    &[class*=ss-bg-clr] {
+        .cmp-notificationbar {
+            background: none;
+        }
+    }
+}

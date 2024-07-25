@@ -1,0 +1,21 @@
+.btn {
+  &.btn-outline {
+    &-primary {
+      --bs-btn-bg: #{$white};
+      --bs-btn-hover-color: #{$white};
+      --bs-btn-hover-bg: #{$primary};
+      --bs-btn-hover-border-color: #{$primary};
+      --bs-btn-active-color: #{$white};
+      --bs-btn-active-bg: #{$primary};
+      --bs-btn-active-border-color: #{$primary};
+    }
+
+    &-secondary {
+      --bs-btn-bg: #{$white};
+    }
+
+    &-tertiary {
+      --bs-btn-bg: #{$white};
+    }
+  }
+}

@@ -1,0 +1,6 @@
+.ss-border-sms {
+&> .ss-bg {
+    background: linear-gradient( -31deg, transparent 10px, var(--foo-bg-color) 10px);
+    border: 0 none;
+  }
+}

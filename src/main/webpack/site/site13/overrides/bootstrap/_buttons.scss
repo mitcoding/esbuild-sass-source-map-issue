@@ -1,0 +1,17 @@
+.btn {
+  &.btn-outline-primary {
+    --bs-btn-color: #{$primary};
+    --bs-btn-bg: #{$white};
+    --bs-btn-border-color: #{$primary};
+    --bs-btn-hover-color: #{$primary-dark};
+    --bs-btn-hover-bg: #{$white};
+    --bs-btn-hover-border-color: #{$primary-dark};
+    --bs-btn-active-color: #{$primary-dark};
+    --bs-btn-active-bg: #{$primary-lightest};
+    --bs-btn-active-border-color: #{$primary-dark};
+    --bs-btn-active-shadow: #{$btn-shadow-primary};
+    --bs-btn-disabled-color: #{$btn-disabled-fg-clr};
+    --bs-btn-disabled-bg: #{$btn-disabled-bg-clr};
+    --bs-btn-disabled-border-color: #{$btn-disabled-border-color};
+  }
+}

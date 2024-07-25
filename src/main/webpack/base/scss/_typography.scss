@@ -1,0 +1,85 @@
+h1, .h1 {
+    line-height: $headings-line-height;
+    font-weight: $font-weight-normal;
+    margin-bottom: $h1-margin-bottom;
+    @include clampShim("font-size", $h1-font-size, $h1-font-scaler, $h1-font-size-desktop);
+}
+
+h2, .h2 {
+    line-height: $headings-line-height;
+    margin-bottom: $h2-margin-bottom;
+    @include clampShim("font-size", $h2-font-size, $h2-font-scaler, $h2-font-size-desktop);
+}
+
+h3, .h3 {
+    line-height: $headings-line-height;
+    margin-bottom: $h3-margin-bottom;
+    @include clampShim("font-size", $h3-font-size, $h3-font-scaler, $h3-font-size-desktop);
+}
+
+h4, .h4 {
+    line-height: $headings-line-height;
+    margin-bottom: $h4-margin-bottom;
+    @include clampShim("font-size", $h4-font-size, $h4-font-scaler, $h4-font-size-desktop);
+}
+
+h5, .h5 {
+    line-height: $headings-line-height;
+    margin-bottom: $h5-margin-bottom;
+    @include clampShim("font-size", $h5-font-size, $h5-font-scaler, $h5-font-size-desktop);
+}
+
+h6, .h6 {
+    line-height: $headings-line-height;
+    margin-bottom: $h6-margin-bottom;
+    @include clampShim("font-size", $h6-font-size, $h6-font-scaler, $h6-font-size-desktop);
+}
+
+
+.body-lg {
+    line-height: $font-line-height;
+    font-weight: var(--bs-body-font-weight);
+    margin-bottom: $body-lg-margin-bottom;
+    @include clampShim("font-size", $body-lg-font-size, $body-lg-font-scaler, $body-lg-font-size-desktop);
+}
+
+.body-md {
+    line-height: $font-line-height;
+    font-weight: var(--bs-body-font-weight);
+    margin-bottom: $body-md-margin-bottom;
+    @include clampShim("font-size", $body-md-font-size, $body-md-font-scaler, $body-md-font-size-desktop);
+}
+
+p,
+.p,
+.body-reg {
+    line-height: $font-line-height;
+    font-weight: var(--bs-body-font-weight);
+    margin-bottom: $body-reg-margin-bottom;
+    @include clampShim("font-size", $body-reg-font-size, $body-reg-font-scaler, $body-reg-font-size-desktop);
+}
+
+.body-sm {
+    line-height: $font-line-height;
+    font-weight: var(--bs-body-font-weight);
+    margin-bottom: $body-sm-margin-bottom;
+    @include clampShim("font-size", $body-sm-font-size, $body-sm-font-scaler, $body-sm-font-size-desktop);
+}
+
+.body-xs {
+    line-height: $font-line-height;
+    font-weight: var(--bs-body-font-weight);
+    margin-bottom: $body-xs-margin-bottom;
+    @include clampShim("font-size", $body-xs-font-size, $body-xs-font-scaler, $body-xs-font-size-desktop);
+}
+
+ul, ol {
+    padding: 0;
+    margin-left: $grid-unit * 3;
+    margin-bottom: $spacer-2x;
+
+    li {
+        @extend .body-reg;
+        margin-bottom: $spacer-1x;
+    }
+}

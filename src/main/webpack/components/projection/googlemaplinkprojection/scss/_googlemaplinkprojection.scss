@@ -1,0 +1,19 @@
+.googlemaplinkprojection {
+
+  margin-bottom: $spacer-4x;
+
+  &.ss-layout-block {
+    .cmp-googlemaplinkprojection__address-segment {
+      display: block;
+    }
+  }
+
+  &.ss-position-stacked {
+    margin-bottom: 0;
+  }
+
+}
+
+.cmp-googlemaplinkprojection {
+
+}

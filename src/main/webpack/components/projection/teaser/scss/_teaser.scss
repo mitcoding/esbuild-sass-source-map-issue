@@ -1,0 +1,205 @@
+
+.teaser {
+    margin-bottom: $common-margin-bottom-mobile;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: $common-margin-bottom-desktop * 2;
+    }
+
+    &.ss-presentation-card {
+
+        background-color: $teaser-ss-presentation-card-background-color;
+        box-shadow: $teaser-ss-presentation-card-box-shadow;
+        border: $teaser-ss-presentation-card-border;
+        padding: 0;
+
+        .pageteaser {
+            &__content {
+                padding: $teaser-ss-presentation-card-content-padding;
+
+                &__link {
+                    text-align: left;
+                    font-size: 1rem;
+                }
+            }
+
+            &__imagecontainer {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            box-shadow: $teaser-ss-presentation-card-lg-box-shadow;
+            border: $teaser-ss-presentation-card-lg-border;
+        }
+    }
+}
+
+.cmp-teaser {
+    .pageteaser {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        &__imagecontainer {
+            width: 100%;
+            margin-bottom: $grid-unit;
+
+            &__image {
+                height: 0;
+                padding-top: $teaser-imagecontainer-image-standard-aspect-ratio * 100%;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: $grid-unit * 2;
+            }
+        }
+
+        &__content {
+
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                @extend h4;
+                margin-top: 16px;
+
+                a {
+                    font-size: 1rem;
+                    margin-top: 1rem;
+                }
+            }
+
+            &__publicationdate {
+                @extend .body-sm;
+                color: $teaser-content-publicationdate-color;
+                margin-bottom: $grid-unit;
+            }
+
+            &__description {
+                @extend .body-sm;
+
+                color: $text-standard;
+                flex-grow: 0;
+                text-decoration: none;
+            }
+
+            &__link {
+                @extend .body-reg;
+                @extend a;
+            }
+
+        }
+    }
+}
+
+.ss-type-featured {
+    .cmp-teaser {
+        .pageteaser {
+
+            &__content {
+                padding: $teaser-ss-presentation-card-content-padding;
+
+                &__desc {
+                    @extend .body-reg;
+                }
+
+                &__link {
+                    @extend .body-lg;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                &__imagecontainer {
+                    width: 35%;
+                    min-width: 45%;
+                    margin-right: $grid-unit * 3;
+                    margin-bottom: 0;
+                    padding: $teaser-ss-presentation-card-content-padding;
+
+                    &__image {
+                        padding-top: $teaser-imagecontainer-image-standard-aspect-ratio * 100%;
+
+                        img {
+                            width: auto;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &__content {
+
+                    &__desc {
+                        flex-grow: 0;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+/*
+ * Getting the cards to line up a full height
+ */
+.cmp-columnrow {
+    >.cmp-columnrow__column {
+
+        @include media-breakpoint-up(xl) {
+            &[class*="g-col-xl-"] {
+                >div.teaser.ss-presentation-card {
+                    height: 100%;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            &[class*="g-col-lg-"] {
+                >div.teaser.ss-presentation-card {
+                    height: 100%;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            &[class*="g-col-md-"] {
+                >div.teaser.ss-presentation-card {
+                    height: 100%;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            &[class*="g-col-sm-"] {
+                >div.teaser.ss-presentation-card {
+                    height: 100%;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(xs) {
+            &[class*="g-col-xs-"] {
+                >div.teaser.ss-presentation-card {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

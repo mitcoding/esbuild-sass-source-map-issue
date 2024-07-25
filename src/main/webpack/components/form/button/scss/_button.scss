@@ -1,0 +1,13 @@
+.button {
+    .cmp-form-button {
+        line-height: $btn-line-height + ($btn-border-width * 2);
+        padding: 6px 12px;
+        font-size: $font-size-base;
+        border: none;
+        height: auto;
+    }
+    &.ss-alignment--center {
+        justify-content: center;
+        display: flex;
+    }
+}

@@ -1,0 +1,249 @@
+.teaserlist {
+    margin-bottom: $common-margin-bottom-mobile;
+
+    .cmp-teaserlist {
+        list-style: none;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        margin-left: 0;
+
+        &__item {
+            margin-bottom: $spacer-2x;
+
+            > a {
+                height: 100%;
+                text-decoration: none;
+            }
+
+            /*
+            * The .pageteaser styling is an exact copy of what is in _teaser.scss here and similarly elsewhere in this
+            * file.
+            * TODO: Come up with a good way to remove the duplication
+            */
+            .pageteaser {
+
+                height: 100%;
+
+                display: flex;
+                flex-direction: column;
+
+                &__imagecontainer {
+
+                    width: 100%;
+                    margin-bottom: $spacer-1x;
+
+                    &__image {
+
+                        height: 0;
+                        padding-top: $teaser-imagecontainer-image-standard-aspect-ratio * 100%;
+                        position: relative;
+                        overflow: hidden;
+                        background-color: $teaserlist-imagecontainer-image-background-color;
+
+                        img {
+                            width: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                &__content {
+
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    &__title {
+
+                        @extend h4;
+                        color: $teaser-content-title-color; 
+                        text-decoration: none;
+                        font-weight: $font-weight-normal;
+
+                    }
+
+                    &__publicationdate {
+                        @extend .body-sm;
+                        color: $teaser-content-publicationdate-color;
+                        margin-bottom: $grid-unit;
+                    }
+
+                    &__description {
+                        @extend .body-sm;
+
+                        color: $text-standard;
+                        flex-grow: 0;
+                        text-decoration: none;
+                    }
+
+                    &__link {
+                        @extend .body-reg;
+                        @extend a;
+                    }
+
+                }
+            }
+        }
+    }
+
+    &.ss-presentation-card {
+        .cmp-teaserlist {
+            &__item {
+                background-color: $teaser-ss-presentation-card-background-color;
+                padding: 0;
+                border: $teaser-ss-presentation-card-border;
+                box-shadow: $teaser-ss-presentation-card-box-shadow;
+                margin-bottom: 1rem;
+
+                .pageteaser {
+                    &__imagecontainer {
+                        margin-bottom: 0;
+
+                        &__image {
+
+                            img {
+                                width: 100%;
+                                position: absolute;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+
+                    &__content {
+                        padding: $teaser-ss-presentation-card-content-padding;
+
+                        &__title {
+                            font-size: 1rem;
+                        }
+
+                        &__link {
+                            text-align: left;
+                            font-size: 1rem;
+                        }
+
+                        &__description {
+                            // Push the read more link to the bottom
+                            flex-grow: 1;
+                        }
+                    }
+                }
+
+                @include media-breakpoint-up(lg) {
+                    box-shadow: $teaser-ss-presentation-card-lg-box-shadow;
+                    border: $teaser-ss-presentation-card-lg-border;
+                    margin-bottom: $teaser-ss-presentation-card-lg-margin-bottom;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        &.ss-layout-2upgrid,
+        &.ss-layout-3upgrid,
+        &.ss-layout-4upgrid {
+            .cmp-teaserlist {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: $spacer-2x;
+                row-gap: $spacer-3x;
+
+                &__item {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: $common-margin-bottom-desktop;
+
+        .cmp-teaserlist {    
+            .pageteaser {
+
+                &__imagecontainer {
+                    margin-bottom: $spacer-2x;
+                }
+            }
+        }
+
+    
+        &.ss-layout-2upgrid {
+            .cmp-teaserlist {
+                column-gap: $spacer-3x;
+                row-gap: $spacer-4x;
+            }
+        }
+    
+        &.ss-layout-3upgrid {
+            .cmp-teaserlist {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    
+        &.ss-layout-4upgrid {
+            .cmp-teaserlist {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+    
+        &.ss-type-featured {
+            .cmp-teaserlist {
+                .pageteaser {
+    
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+    
+                    &__imagecontainer {
+                        width: 35%;
+                        min-width: 35%;
+                        margin-right: $spacer-3x;
+                        margin-bottom: 0;
+    
+                        &__image {
+                            padding-top: $teaser-imagecontainer-image-standard-aspect-ratio * 100%;
+    
+                            img {
+                                width: auto;
+                                width: 100%;
+                            }
+                        }
+                    }
+    
+                    &__content {
+    
+                        &__desc {
+                            flex-grow: 0;
+                        }
+    
+                        &__link {
+                            text-align: right;
+                        }
+    
+                    }
+                }
+            }
+    
+            &.ss-presentation-card {
+                .pageteaser {
+                    &__content {
+                        padding: $teaser-ss-presentation-card-content-padding;
+                    }
+    
+                    &__imagecontainer {
+                        min-width: 45%;
+                        width: 45%;
+                        padding: $teaser-ss-presentation-card-content-padding;
+                    }
+                }
+            }
+        }
+    }
+}

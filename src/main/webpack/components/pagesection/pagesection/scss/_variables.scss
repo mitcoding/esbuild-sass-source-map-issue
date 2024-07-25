@@ -1,0 +1,28 @@
+$pagesection-border: 1px solid $gray-200 !default;
+$pagesection-spacing-basis: $global-spacing-basis !default;
+
+$pagesection-spacing-vertical: $spacer-6x !default;
+$pagesection-spacing-vertical-lg: $spacer-6x !default;
+$pagesection-spacing-vertical-ribbon: $spacer-1x !default;
+$pagesection-spacing-vertical-ribbon-lg: $spacer-1x !default;
+$pagesection-spacing-vertical-tall: $spacer-12x !default;
+$pagesection-spacing-vertical-tall-lg: $spacer-12x !default;
+$pagesection-spacing-vertical-verytall: $spacer-12x * 2 !default;
+$pagesection-spacing-vertical-verytall-lg: $spacer-12x * 2 !default;
+$pagesection-spacing-vertical-short: $spacer-3x !default;
+$pagesection-spacing-vertical-short-lg: $spacer-3x !default;
+
+$pagesection-spacing-horizontal: $spacer-2x !default;
+$pagesection-spacing-horizontal-lg: 8% !default;
+$pagesection-spacing-horizontal-narrow: $spacer-6x !default;
+$pagesection-spacing-horizontal-narrow-lg: 16% !default;
+$pagesection-spacing-horizontal-wide: $spacer-3x !default;
+$pagesection-spacing-horizontal-wide-lg: 4% !default;
+$pagesection-spacing-horizontal-verywide: $spacer-3x !default;
+$pagesection-spacing-horizontal-verywide-lg: $spacer-4x !default;
+
+$row-gap-narrow: $spacer-3x;
+
+// Background Handling
+$backgroundOpacityOptions: 10, 20, 30, 40, 50 !default;
+$backgroundGradientDirections: left, right, top, bottom !default;

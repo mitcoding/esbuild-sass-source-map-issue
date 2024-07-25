@@ -1,0 +1,177 @@
+$carousel-indicator-active-color: $primary !default;
+
+.cmp-carousel {
+    &__actions {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        top: calc(40% - 2.5rem);
+        justify-content: space-between;
+        pointer-events: none;
+    }
+
+    &__indicators {
+        position: absolute;
+        justify-content: flex-end;
+        align-items: center;
+        bottom: 0;
+        width: 100%;
+        padding: 0 $spacer-4x $spacer-2x 0;
+        @include media-breakpoint-up(lg) {
+            padding-right: $spacer-2x;
+        }
+    }
+
+    &__content {
+        margin-bottom: $spacer-6x;
+        padding-bottom: $spacer-6x;
+    }
+
+    .cmp-quotation__content__figure__person__name,
+    .cmp-quotation__content__figure__text{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        @include media-breakpoint-up(sm) {
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__content--forwards {
+        .cmp-carousel__item--active {
+            animation: slideInFromRight .25s ease-out;
+        }
+
+    }
+
+    &__content--backwards {
+        .cmp-carousel__item--active {
+            animation: slideInFromLeft .25s ease-out;
+        }
+    }
+
+    &__indicator {
+        cursor: pointer;
+        background-color: $gray-400;
+        width: $spacer-1x;
+        height: $spacer-1x;
+
+        &--active {
+            background-color: $carousel-indicator-active-color;
+        }
+    }
+
+    &__action {
+        color: $carousel-arrow-color;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        background-color: transparent;
+        pointer-events: all;
+        cursor: pointer;
+
+        &--next,
+        &--previous {
+            display: block;
+            &:after {
+                font-family: $font-family-icon-font;
+                font-weight: 900;
+                font-size: 1.5rem;
+            }
+        }
+
+        &--previous{
+            &:after {
+                content: '\f053';
+            }
+        }
+
+        &--next{
+            &:after {
+                content: '\f054';
+            }
+        }
+
+        &:hover {
+            color: $carousel-arrow-color-hover;
+        }
+
+        &--disabled {
+            display: none;
+        }
+    }
+
+    &__action-pp {
+        background: none;
+        margin: 0;
+        appearance: none;
+        -moz-appearance: none;
+        /* Firefox */
+        -webkit-appearance: none;
+        /* Safari and Chrome */
+        border: none;
+
+        .cmp-carousel__action-icon {
+            border-radius: 50%;
+            padding: 5px;
+            font-size: .5rem;
+            border: solid 1px;
+        }
+
+        &.cmp-carousel__action--play {
+            .cmp-carousel__action-icon {
+                padding-right: 4px;
+            }
+        }
+    }
+}
+.carousel {
+    &.ss {
+        &-type-content {
+            .cmp-carousel {
+                &__indicators {
+                    @include media-breakpoint-up(lg) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-carousel-hero {
+            .cmp-carousel {
+                @include media-breakpoint-up(lg) {
+                    &__actions,
+                    &__indicators {
+                        display: none;
+                    }
+
+                    &__content {
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &-circle-actions {
+            .cmp-carousel {
+                &__action {
+                    color: $white;
+                    background: rgba(0, 0, 0, .4);
+                    border-radius: 50%;
+
+                    &--previous::after {
+                        margin-left: -0.125rem; // 2px if base font size is 16px
+                    }
+
+                    &--next::after {
+                        margin-right: -0.125rem; // 2px if base font size is 16px
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.serviceteaser {
+    margin-bottom: $common-margin-bottom-mobile;
+}
+
+.cmp-teaser {
+    height: 100%;
+
+    .pageteaser--serviceteaser {
+
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        .pageteaser__content {
+
+            height: 100%;
+
+            background: $serviceteaser-content-background;
+            padding: $serviceteaser-content-padding;
+        }
+
+        .pageteaser__content__title {
+
+            @extend h4;
+            //margin-top: 16px;
+            a {
+                color: $teaser-content-title-color;
+                font-size: 1.5rem;
+                text-decoration: none;
+                //margin-top: 1rem;
+            }
+        }
+
+        .pageteaser__content__publicationdate {
+            @extend .body-sm;
+            color: $teaser-content-publicationdate-color;
+            margin-bottom: $grid-unit;
+        }
+
+        .pageteaser__content__description {
+            @extend .body-reg;
+            color: $teaser-content-description-color;
+            flex-grow: 1;
+        }
+
+        .pageteaser__content__link {
+            color: $teaser-content-link-color;
+            @extend .body-reg;
+        }
+    }
+}
+
+/*
+ * Equalizing height in a columnrow
+ */
+.cmp-columnrow {
+    > .cmp-columnrow__column {
+        > div.serviceteaser {
+            height: 100%;
+        }
+    }
+}

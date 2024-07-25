@@ -1,0 +1,458 @@
+/*
+ * High level alignment options that are applicable across a wide variety of components.
+ * Text-alignment attributes should in general not be specified at a component level unless
+ * they are for use-case specific components such as a page-teaser where these options would not
+ * be applicable to the content of the teaser but to the overall teaser itself.
+ *
+ * There will also be cases where more specific rules are needed for how these style system options
+ * should be handled at a component leve.  Page teaser list is an example where different rules are
+ * needed to handle the flexbox styling rules when these options are applied.
+ */
+
+.ss {
+    &-font {
+        &-size {
+
+            &--xl {
+                @extend .display-1;
+
+                p,
+                li {
+                    @extend .display-1;
+                }
+            }
+
+            &--lg {
+                @extend .body-lg;
+
+                p,
+                li {
+                    @extend .body-lg;
+                }
+            }
+
+            &--md {
+                @extend .body-md;
+
+                p,
+                li {
+                    @extend .body-md;
+                }
+            }
+
+            &--sm {
+                @extend .body-sm;
+
+                p,
+                li {
+                    @extend .body-sm;
+                }
+            }
+
+            &--xs {
+                @extend .body-xs;
+
+                p,
+                li {
+                    @extend .body-xs;
+                }
+            }
+        }
+    }
+
+    &-bg {
+        background-color: var(--foo-bg-color, transparent);
+
+        /* 
+        * Use the theme color variables
+        * Add Change policy class names
+        * .ss-bg .clr--(color-name)
+        */
+        @each $name,
+        $bgColor in $theme-colors {
+            &-clr--#{$name} {
+                $fg: default-fg-color($bgColor);
+                --foo-bg-lum: #{lightness($bgColor)};
+                --foo-bg-alpha: #{alpha($bgColor)};
+                --foo-bg-color: hsla(#{hue($bgColor)}, #{saturation($bgColor)}, var(--foo-bg-lum, #{lightness($bgColor)} ), var(--foo-bg-alpha, #{alpha($bgColor)} ) );
+
+                @if ($fg == $white) {
+                    --bs-link-color: #{$white};
+                    --bs-link-hover-color: #{$white};
+                }
+
+                color: $fg;
+
+                &.ss-bg-lum {
+                    @each $num,
+                    $lumanence in $lumanences {
+                        $bg: calc-bg-color($bgColor, $num * 1.0);
+                        $fg: default-fg-color($bg);
+
+                        &--#{$num} {
+                            @if ($fg == $white) {
+                                --bs-link-color: #{$white};
+                                --bs-link-hover-color: #{$white};
+                            }
+                            @else {
+                                --bs-link-color: #{$link-color};
+                                --bs-link-hover-color: #{$link-hover-color};
+                            }
+
+                            &:not(.ss-fg) {
+                                color: $fg;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-lum {
+            @each $name,
+            $lumanence in $lumanences {
+                &--#{$name} {
+                    --foo-bg-lum: calc(#{$lumanence} + var(--foo-bg-lum-inc, 0%) );
+                }
+            }
+    
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name}0 {
+                        --foo-bg-lum-inc: #{$value};
+                    }
+                }
+            }
+        }
+    
+        &-alpha {
+            @each $name,
+            $opacitiy in $opacities {
+                &--#{$name} {
+                    --foo-bg-alpha: calc(#{$opacitiy} + var(--foo-bg-alpha-inc, 0%) );
+                }
+            }
+    
+            &-inc {
+                @each $name,
+                $value in $increases {
+                    &--#{$name} {
+                        --foo-bg-alpha-inc: #{$value};
+                    }
+                }
+            }
+        }
+    }
+
+    &-fg {
+
+        /* 
+        * Use the theme color variables
+        * Add Change policy class names
+        * .ss-fg .clr--(color-name)
+        */
+        @each $name,
+        $color in $theme-colors {
+            &-clr--#{$name} {
+                color: hsl(hue($color), saturation($color), var(--foo-fg-lum, lightness($color) ) );
+            }
+
+            &-lnk-clr--#{$name} {
+                --bs-link-color: hsl(#{hue($color)}, #{saturation($color)}, var(--foo-fg-lnk-lum, #{lightness($color)} ) );               
+            }
+
+            &-lnk-hvr-clr--#{$name} {
+                --bs-link-hover-color: hsl(#{hue($color)}, #{saturation($color)}, var(--foo-fg-lnk-hvr-lum, #{lightness($color)} ) );
+            }
+        }
+
+        
+        @each $name,
+        $lumanence in $lumanences {
+            &-lum--#{$name} {
+                --foo-fg-lum: calc(#{$lumanence} + var(--foo-fg-lum-inc, 0%) );
+            }
+
+            &-lnk-lum--#{$name} {
+                --foo-fg-lnk-lum: calc(#{$lumanence} + var(--foo-fg-lnk-lum-inc, 0%) );
+            }
+
+            &-lnk-hvr-lum--#{$name} {
+                --foo-fg-lnk-hvr-lum: calc(#{$lumanence} + var(--foo-fg-lnk-hvr-lum-inc, 0%) );
+            }
+        }
+
+        
+        @each $name,
+        $value in $increases {
+            &-lum-inc--#{$name}0 {
+                --foo-fg-lum-inc: #{$value};
+            }
+
+            &-lnk-lum-inc--#{$name} {
+                --foo-fg-lnk-lum-inc: #{$value};
+            }
+            
+            &-lnk-hvr-lum-inc--#{$name} {
+                --foo-fg-lnk-hvr-lum-inc: #{$value};
+            }
+        }
+    }
+
+    &-container {
+        &-margin {
+            &-left {
+                margin-left: 0;
+                
+                @include media-breakpoint-up(xl) {
+                    margin-left: var(--foo-container-margin-left);
+                }
+            }
+
+            &-right {
+                margin-right: 0;
+                
+                @include media-breakpoint-up(xl) {
+                    margin-right: var(--foo-container-margin-right);
+                }
+            }
+        }
+    }
+
+    &-min-height {
+        @each $name,
+        $value in $box-sizes {
+            &-#{$name} {
+                min-height: #{$value};
+            }
+
+            @each $bp,
+            $bpv in $grid-breakpoints {
+                &-#{$bp}-#{$name} {
+                    @include media-breakpoint-up($bp) {
+                        min-height: #{$value};
+                    }  
+                }
+            }
+        }
+    }
+
+    &-max-height {
+        @each $name,
+        $value in $box-sizes {
+            &-#{$name} {
+                max-height: #{$value};
+            }
+
+            @each $bp,
+            $bpv in $grid-breakpoints {
+                &-#{$bp}-#{$name} {
+                    @include media-breakpoint-up($bp) {
+                        max-height: #{$value};
+                    }    
+                }
+            }
+        }
+    }
+
+    &-min-width {
+        @each $name,
+        $value in $box-sizes {
+            &-#{$name} {
+                min-width: #{$value};
+            }
+
+            @each $bp,
+            $bpv in $grid-breakpoints {
+                &-#{$bp}-#{$name} {
+                    @include media-breakpoint-up($bp) {
+                        min-width: #{$value};
+                    }    
+                }
+            }
+        }
+    }
+
+    &-max-width {
+        @each $name,
+        $value in $box-sizes {
+            &-#{$name} {
+                max-width: #{$value};
+            }
+
+            @each $bp,
+            $bpv in $grid-breakpoints {
+                &-#{$bp}-#{$name} {
+                    @include media-breakpoint-up($bp) {
+                        max-width: #{$value};
+                    }  
+                }
+            }
+        }
+    }
+
+    &-listtype {
+        &-twocolumn {
+            > * {
+                @extend .grid;
+                margin-bottom: $spacer-2x;
+
+                > * {
+                    @extend .g-col-12;
+                    @extend .g-col-sm-6;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &--top2bottom {
+                > * {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+
+                    @include media-breakpoint-up(sm) {
+                        column-count: 2;
+                    }
+
+                    > * {
+                        display: inline-block;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-threecolumn {
+            > * {
+                @extend .grid;
+                margin-bottom: $spacer-2x;
+
+                > * {
+                    @extend .g-col-12;
+                    @extend .g-col-sm-6;
+                    @extend .g-col-md-4;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &--top2bottom {
+                > * {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+
+                    @include media-breakpoint-up(sm) {
+                        column-count: 2;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        column-count: 3;
+                    }
+                    
+                    > * {
+                        display: inline-block;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &-fourcolumn {
+            > * {
+                @extend .grid;
+                margin-bottom: $spacer-2x;
+
+                > * {
+                    @extend .g-col-12;
+                    @extend .g-col-sm-6;
+                    @extend .g-col-md-4;
+                    @extend .g-col-xl-3;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &--top2bottom {
+                > * {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+
+                    @include media-breakpoint-up(sm) {
+                        column-count: 2;
+                    }
+
+                    @include media-breakpoint-up(md) {
+                        column-count: 3;
+                    }
+
+                    @include media-breakpoint-up(xl) {
+                        column-count: 4;
+                    }
+                    
+                    > * {
+                        display: inline-block;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ss-alignment-left {
+    text-align: left;
+}
+
+.ss-alignment-center {
+    text-align: center;
+}
+
+.ss-alignment-right {
+    text-align: right;
+}
+
+@include media-breakpoint-up(lg) {
+    .ss-alignment-leftatlarge {
+        text-align: left;
+    }
+
+    .ss-alignment-centeratlarge {
+        text-align: center;
+    }
+
+    .ss-alignment-rightatlarge {
+        text-align: right;
+    }
+}
+
+.ss-textdecoration-none {
+    a {
+        text-decoration: none;
+
+        &:hover, &:active, &:visited {
+            text-decoration: none;
+        }
+    }
+}

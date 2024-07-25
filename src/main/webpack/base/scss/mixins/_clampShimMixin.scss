@@ -1,0 +1,17 @@
+@mixin clampShim($property, $min, $scaler, $max, $important:"") {
+  $minViewPortWidth: viewPortWidth-calc($min, $scaler);
+  $maxViewPortWidth: viewPortWidth-calc($max, $scaler);
+  
+  & {
+    #{$property}: $min #{$important};
+    #{$property}: $scaler #{$important};
+  }
+  
+  @media (max-width: $minViewPortWidth) {
+    #{$property}: $min #{$important};
+  }
+
+  @media (min-width: $maxViewPortWidth) {
+    #{$property}: $max #{$important};
+  }
+}

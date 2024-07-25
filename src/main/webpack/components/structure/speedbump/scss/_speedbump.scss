@@ -1,0 +1,31 @@
+.cmp-speedbump {
+    .speedbump__dialog {
+        .speedbump__content {
+            border: 0;
+            .speedbump__header {
+                background-color: $primary;
+                .speedbump__title {
+                    color: white;
+                    font-weight: 200;
+                }
+                .btn-close {
+                    color: white;
+                }
+            }
+            .speedbump__footer {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                .btn-secondary {
+                    background-color: white;
+                    border: 1px solid $primary;
+                    color: $primary;
+                }
+                .btn-primary {
+                    background-color: $primary;
+                    color: white;
+                }
+            }
+        }
+    }
+}

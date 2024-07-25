@@ -1,0 +1,18 @@
+$border-width:                   1px;
+$border-color:                   $gray-400;
+
+$border-radius:                  0;
+$border-radius-lg:               0;
+$border-radius-sm:               0;
+
+$thickness-options: (
+  100: 0.0625rem,
+  200: 0.125rem,
+  300: 0.1875rem,
+  400: 0.25rem,
+  500: 0.5rem,
+  600: 0.625rem,
+  700: 0.75rem,
+  800: 0.875rem,
+  900: 1rem
+) !default;

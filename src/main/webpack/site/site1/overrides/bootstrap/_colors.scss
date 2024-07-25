@@ -1,0 +1,60 @@
+@import "bootstrap/scss/functions";
+
+$primary:             #A51E1E;
+$secondary:           #828484;
+$tertiary:            #5FBB47;
+
+$primary-dark:        #931717;
+$primary-light:       #BF2828;
+$primary-lightest:    #D84040;
+
+$secondary-dark:      #595A5A;
+$secondary-light:     #E8E8E8;
+$secondary-lightest:  #F5F5F5;
+
+$tertiary-dark:       #489333;
+$tertiary-light:      #FBAF42;
+$tertiary-lightest:   #FAF0DC;
+
+
+/* Gray Scale */
+$white:                    #FFF;
+$gray-100:                 #F4F4F4;
+$gray-200:                 #ECECEC;
+$gray-300:                 #DDD;
+$gray-400:                 #B9B9B9;
+$gray-500:                 #9A9A9A;  
+$gray-600:                 #717171;
+$gray-700:                 #5D5D5D;
+$gray-800:                 #3F3F3F;
+$gray-900:                 #1E1E1E;
+$gray:                     $gray-900;
+$text-standard:            $gray;
+
+/* --- Buttons --- */
+$btn-border-width:                  0.125rem; // 2px if font base is 16px
+$btn-border-radius:                 0.3125rem; // 5px if font base is 16px
+
+$btn-disabled-fg-clr:               $secondary-dark;
+$btn-disabled-bg-clr:               $secondary-light;
+$btn-disabled-border-color:         $secondary-light;
+$btn-disabled-opacity: 1;
+
+$btn-fg-clr-tertiary:                $white;
+$btn-fg-clr-tertiary-active:         $white;
+$btn-fg-clr-tertiary-hover:          $white;
+$btn-bg-clr-tertiary:                $tertiary;
+$btn-bg-clr-tertiary-active:         $secondary-dark;
+$btn-bg-clr-tertiary-hover:          $tertiary-dark;
+$btn-border-color-tertiary:          $white;
+$btn-border-color-tertiary-active:   $white;
+$btn-border-color-tertiary-hover:    $white;
+$btn-shadow-tertiary:                none;
+$btn-shadow-tertiary-hover:          none;
+
+$btn-fg-clr-link:                  $tertiary;
+$btn-fg-clr-link-hover:            $tertiary-dark;
+$btn-fg-clr-link-active:           $secondary-dark;
+$btn-underline-clr-link:           $btn-fg-clr-link;
+$btn-underline-clr-link-hover:     $btn-fg-clr-link-hover;
+$btn-underline-clr-link-active:    $btn-fg-clr-link-active;

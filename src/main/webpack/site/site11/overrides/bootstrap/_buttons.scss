@@ -1,0 +1,38 @@
+.btn {
+  &.ss-border-sms,
+  &.ss-border-sms:active,
+  &.ss-border-sms:focus,
+  &.ss-border-sms:hover {
+    position: relative;
+    background: linear-gradient( -31deg, transparent 10px, var(--bs-btn-bg) 10px);
+    border: 0 none;
+    z-index: 1;
+    @include transition($sms-transition);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: -1;
+      @include transition($sms-transition-gradient-fix);
+    }
+    
+    &:focus::before,
+    &:hover::before {
+      background: linear-gradient( -31deg, transparent 10px, var(--bs-btn-hover-bg) 10px);
+      opacity: 1;
+    }
+
+    &:active::before,
+    &:focus:active::before,
+    &:hover:active::before {
+      background: linear-gradient( -31deg, transparent 10px, var(--bs-btn-active-bg) 10px);
+      opacity: 1;
+    }
+  }
+}

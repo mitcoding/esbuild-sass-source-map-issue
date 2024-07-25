@@ -1,0 +1,130 @@
+.cmp-form-options {
+    
+
+    &__label {
+        @include media-breakpoint-down(xl) {
+            font-size: $font-size-base * 0.75; // 12px
+        }
+    }
+
+    &--checkbox {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        legend {
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 24px;
+            }
+        }
+        .cmp-form-options__field--checkbox{
+            &[type=checkbox]{
+                opacity: 0;
+                width: 1px;
+                overflow: hidden;
+                position: absolute;
+            }
+            &[type=checkbox] + *::before {
+                content: "";
+                display: inline-block;
+                vertical-align: bottom;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 0.2rem;
+                border-style: solid;
+                border-width: 0.16rem;
+                margin-right: .9rem;
+            }
+            &[type=checkbox]:checked + *::before {
+                content: "✓";
+                color: $white;
+                text-align: center;
+            }
+            &[type=checkbox]:checked + * {
+                color: $black;
+            }
+        }
+    }
+    &--drop-down {
+        flex-direction: column;
+        height: $spacer * 5;
+        display: grid;
+        align-items: end;
+        .cmp-form-options__field--drop-down {
+            border: 1px solid $gray-200;
+            border-radius: 0;
+            min-height: 40px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='11' viewBox='0 0 17 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.26608 0.878951L1.26621 0.878838L1.26158 0.874282C1.1763 0.79034 1.07516 0.732894 0.959603 0.732894C0.857599 0.732894 0.758991 0.778551 0.700224 0.832581C0.50161 0.984747 0.498821 1.24483 0.655074 1.40147L8.3639 9.83302C8.521 10.0329 8.82676 10.0329 8.98385 9.83301L16.6927 1.40146C16.8488 1.24493 16.8461 0.98509 16.6479 0.832884C16.4895 0.683877 16.2308 0.687818 16.0782 0.882786L8.67387 8.96967L1.26608 0.878951Z' fill='black' stroke='black' stroke-width='0.25'/%3E%3C/svg%3E");
+            background-repeat: no-repeat, repeat;
+            background-position: right .9em top 50%, 0 0;
+            background-size: 1em auto, 100%;
+            &::placeholder,
+            option {
+                color: $black;
+            }
+            &:focus {
+                border: 1px solid $primary;
+            }
+        }
+    }
+    &__field-label {
+        margin: 0 26px 11px 0;
+        display: block;
+        text-align: left;
+        @include media-breakpoint-down(xl) {
+            font-size: $font-size-base * 0.875; //14px
+        }
+
+        &--icon {
+            .cmp-form-options__field-description {
+                &--icon {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+    }
+    &--radio {
+        margin-bottom: 1rem;
+        legend {
+            margin-bottom: 10px;
+            &:required {
+                color: $green;
+            }
+        }
+        .cmp-form-options__field-label {
+            .cmp-form-options__field--radio{  
+                &[type=radio]{
+                    opacity: 0;
+                    width: 1px;
+                    overflow: hidden;
+                    position: absolute;
+                }
+                &[type=radio] + *::before {
+                    content: "";
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-right: .9rem;
+                    border-radius: 50%;
+                    border-style: solid;
+                    border-width: 0.2rem;
+                }
+                &[type=radio]:checked + * {
+                    color: $black;
+                }
+            
+            }
+        }
+    }
+    &__field-description {
+        &--icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+    &__help-message {
+        margin-bottom: 0;
+    }
+}

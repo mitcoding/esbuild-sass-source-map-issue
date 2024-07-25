@@ -1,0 +1,49 @@
+$navbar-item-font-size:                 0.875rem; //14px if base font is 16px
+$navbar-item-font-size-desktop:         1.125rem; //18px if base font is 16px
+$navbar-item-font-scaler:               vw-calc($navbar-item-font-size-desktop);
+
+$h1-font-size:                $font-size-base * 1.375; // 22px
+$h2-font-size:                $font-size-base * 1; // 16px
+$h3-font-size:                $font-size-base * 1.125; // 18px
+$h4-font-size:                $font-size-base * 0.875; // 14px
+$h5-font-size:                $font-size-base * 0.875; // 14px
+$h6-font-size:                $font-size-base * 0.75; // 12px
+
+$h1-font-size-desktop:        $font-size-base * 2.5; // 40px
+$h2-font-size-desktop:        $font-size-base * 1.375; // 22px
+$h3-font-size-desktop:        $font-size-base * 1.125; // 18px
+$h4-font-size-desktop:        $font-size-base * 1; // 16px
+$h5-font-size-desktop:        $font-size-base * 1; // 16px
+$h6-font-size-desktop:        $font-size-base * 0.75; // 12px
+
+$h1-font-scaler:              vw-calc($h1-font-size-desktop); 
+$h2-font-scaler:              vw-calc($h2-font-size-desktop); 
+$h3-font-scaler:              vw-calc($h3-font-size-desktop); 
+$h4-font-scaler:              vw-calc($h4-font-size-desktop); 
+$h5-font-scaler:              vw-calc($h5-font-size-desktop); 
+$h6-font-scaler:              vw-calc($h6-font-size-desktop);
+
+$h1-margin-bottom:            0.75em; // 30px = 80px total height
+$h2-margin-bottom:            0.75em; // 16.5px = 44px total height
+$h3-margin-bottom:            0.75em; // 13.5px = 36px total height
+$h4-margin-bottom:            0.75em; // 12px = 32px total height 
+$h5-margin-bottom:            0.75em; // 12px = 32px total height
+$h6-margin-bottom:            0.75em; //  9px = 24px total height
+
+$body-lg-font-size:           $font-size-base * 1.125; // 18px
+$body-md-font-size:           $font-size-base * 1; // 16px
+$body-reg-font-size:          $font-size-base * 1; // 16px
+$body-sm-font-size:           $font-size-base * 0.875; // 14px
+$body-xs-font-size:           $font-size-base * 0.75; // 12px
+
+$body-lg-font-size-desktop:   $font-size-base * 1.5; // 24px
+$body-md-font-size-desktop:   $font-size-base * 1.125; // 18px
+$body-reg-font-size-desktop:  $font-size-base * 1; // 16px
+$body-sm-font-size-desktop:   $font-size-base * 0.875; // 14px
+$body-xs-font-size-desktop:   $font-size-base * 0.75; // 12px
+
+$body-lg-font-scaler:         vw-calc($body-lg-font-size-desktop);
+$body-md-font-scaler:         vw-calc($body-md-font-size-desktop);
+$body-reg-font-scaler:        vw-calc($body-reg-font-size-desktop);
+$body-sm-font-scaler:         vw-calc($body-sm-font-size-desktop);
+$body-xs-font-scaler:         vw-calc($body-xs-font-size-desktop);

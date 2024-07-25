@@ -1,0 +1,3 @@
+@mixin linear-gradient($direction: to top, $startColor: $teal, $endColor: $white) {
+    background: linear-gradient($direction, $startColor, $endColor);
+}

@@ -1,0 +1,103 @@
+.cmp-header-search {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down(md) {
+        justify-content: center;
+        padding-left: $grid-unit * 2;
+        padding-right: $grid-unit * 2;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        border: 1px solid $gray-400;
+        border-radius: 0.625rem;
+        padding: 0.5rem 0.875rem;
+        width: 100%;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+
+    &__label {
+        margin-bottom: 0;
+        padding: 0 $spacer-1x;
+
+        @include media-breakpoint-down(md) {
+            flex: 1;
+            margin-left: $grid-unit * 2;
+        }
+
+        .cmp-header-search__input {             
+            border: none;
+
+            &:placeholder {
+                font: $body-font; 
+                color: $black;
+                letter-spacing: 0px;
+                line-height: 1.5rem;
+            }
+
+            @include media-breakpoint-down(md) {
+                color: $white;
+                width: 100%;
+
+                &:placeholder {
+                    color: $gray-200;
+                }
+            }
+        }
+    }
+
+    &__txt {
+        display: none;
+    }
+
+    &__btn {
+        border: none;
+        background-color: transparent;
+        color: $black;
+        padding: 0;
+        outline-color: $white;
+        -webkit-text-stroke-width: 0.06rem;
+        -webkit-text-stroke-color: $white;
+
+        @include media-breakpoint-down(md) {
+            color: $white;
+            -webkit-text-stroke-color: $primary;
+            outline-color: $primary;
+        }
+
+        i,
+        em {
+            color: $gray-600;
+            @include media-breakpoint-down(md) {
+                color: $white;
+            }
+        }
+    }
+
+    &__input{
+        background-color: transparent;
+        width: 100%;
+    }
+
+    .js-header-search-form--closed {
+        .cmp-header-search__label {
+            display: none;
+
+            @include media-breakpoint-down(md) {
+                display: inline;
+            }
+        }
+
+        &.cmp-header-search__form  {
+            border: none;
+        }
+    }
+}

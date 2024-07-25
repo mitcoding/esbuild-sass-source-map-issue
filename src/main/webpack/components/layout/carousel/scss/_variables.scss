@@ -1,0 +1,25 @@
+// Carousel
+$carousel-arrow-color:            $black !default;
+$carousel-arrow-color-hover:      $dark !default;
+$carousel-arrow-background:       $primary !default;
+$carousel-arrow-background-hover: $primary-dark !default;
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

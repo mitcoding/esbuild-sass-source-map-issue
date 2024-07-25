@@ -1,0 +1,12 @@
+@use 'sass:math';
+
+$teaser-imagecontainer-image-standard-aspect-ratio: math.div(10, 16) !default;
+$teaser-content-publicationdate-color:              $gray-400 !default;
+$teaser-content-title-color:                        $primary !default;
+$teaser-ss-presentation-card-background-color:      $white !default;
+$teaser-ss-presentation-card-box-shadow:            $box-shadow-heightened-elevation !default;
+$teaser-ss-presentation-card-border:                1px solid $gray-200 !default;
+$teaser-ss-presentation-card-content-padding:       $spacer-4x !default; 
+$teaser-ss-presentation-card-lg-box-shadow:         0 4px 4px 0 rgba(0, 0, 0, 0.25) !default;
+$teaser-ss-presentation-card-lg-border:             1px solid $gray-400 !default;
+$teaser-ss-presentation-card-lg-margin-bottom:      3.5rem !default;

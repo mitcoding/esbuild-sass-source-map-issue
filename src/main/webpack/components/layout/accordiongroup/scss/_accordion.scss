@@ -1,0 +1,85 @@
+@use 'sass:math';
+
+$extend-accordion-header-size: ".body-reg" !default;
+$extend-accordion-body-size: ".body-sm" !default;
+$accordion-header-font-size: $body-reg-font-size-desktop !default;
+$accordion-icon-container-size: $font-size-base * $font-line-height !default;
+$accordion-icon-bg-color: $primary !default;
+
+.accordiongroup {
+    margin-bottom: $component-common-margin-bottom;
+
+    > .cmp-accordion {
+
+        > .cmp-accordion__item {
+
+            > .cmp-accordion__header {
+                @extend #{$extend-accordion-header-size};
+                color: $text-standard;
+                margin-bottom: 0;
+
+                > .cmp-accordion__button {
+                    background-color: transparent;
+                    border: 0;
+                    padding: $spacer-2x 0;
+                    display: flex;
+                    flex-direction: row;
+                    color: $text-standard;
+                    gap: 1rem;
+
+                    > .cmp-accordion__icon {
+                        order: -1;
+
+                        &::before {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: $accordion-icon-container-size * 0.583333333333333;
+                            color: $white;
+                            background-color: $accordion-icon-bg-color;
+                            width: $accordion-icon-container-size;
+                            height: $accordion-icon-container-size;
+                            padding: 0;
+                            border-radius: 50%;
+                            margin-top: math.div((($accordion-header-font-size  * $font-line-height) - $accordion-icon-container-size), 2);
+                            @include font-icon( "\f067", $font-family-icon-font);
+                        }
+                    }
+
+                    > .cmp-accordion__title { 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+
+                    &--expanded {
+                        > .cmp-accordion__icon::before {
+                            display: flex;
+                            @include font-icon( "\f068", $font-family-icon-font);
+                        }
+                    }
+                }
+            }
+
+            > .cmp-accordion__panel {
+                @extend #{$extend-accordion-body-size};
+                
+                padding: $spacer-2x $spacer-2x $spacer-2x $grid-unit*5;
+                margin-bottom: 0;
+
+                p,li {
+                    @extend #{$extend-accordion-body-size};
+                }
+
+                /*
+                 * Whatever component is in a panel should have a 0 margin bottom
+                 */
+                :last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,64 @@
+$yellow:              #F8D48E;
+
+$primary:             #0D1D41;
+$secondary:           #828286;
+$tertiary:            #3970BD;
+
+$primary-dark:        #060F22;
+$primary-light:       #CEE6F7;
+$primary-lightest:    #E7F1F8;
+
+$secondary-dark:      #6B6B75;
+$secondary-light:     #D1D2D4;
+$secondary-lightest:  #F5F5F5;
+
+$tertiary-dark:       #2E5B9A;
+$tertiary-light:      #75AeFD;
+$tertiary-lightest:   #C1DAFD;
+
+$white:               #FFF;
+$gray-100:            #F3F3F3;
+$gray-200:            #EAEAEA;
+$gray-300:            #D1D2D4;
+$gray-400:            #B7B7B7;
+$gray-500:            #828286;
+$gray-600:            #6F6F6F;
+$gray-700:            #5C5C5C;
+$gray-800:            #3D3D3D;
+$gray-900:            #1D1D1D;
+$gray:                $gray-800;
+$black:               #000;
+
+$text-standard:       $gray;
+
+$custom-theme-colors: (
+  "yellow": $yellow
+);
+
+
+/* --- Buttons --- */
+$btn-border-width:                  0.125rem; // 2px if font base is 16px
+$btn-border-radius:                 0;
+
+$btn-disabled-fg-clr:               $secondary-light;
+$btn-disabled-bg-clr:               $secondary;
+$btn-disabled-border-color:         $secondary;
+$btn-disabled-opacity: 1;
+
+$btn-fg-clr-tertiary:                $white;
+$btn-fg-clr-tertiary-active:         $white;
+$btn-fg-clr-tertiary-hover:          $white;
+$btn-bg-clr-tertiary:                $tertiary;
+$btn-bg-clr-tertiary-active:         $tertiary-light;
+$btn-bg-clr-tertiary-hover:          $primary;
+$btn-border-color-tertiary:          $white;
+$btn-border-color-tertiary-active:   $white;
+$btn-border-color-tertiary-hover:    $white;
+$btn-shadow-tertiary:                none;
+$btn-shadow-tertiary-hover:          none;
+
+$btn-fg-clr-link: $tertiary;
+$btn-fg-clr-link-hover: $btn-fg-clr-link;
+$btn-fg-clr-link-active: $primary;
+$btn-underline-clr-link-hover: $btn-fg-clr-link-hover;
+$btn-underline-clr-link-active: $btn-fg-clr-link-active;

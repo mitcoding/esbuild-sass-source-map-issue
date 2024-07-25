@@ -1,0 +1,250 @@
+:root {
+    --foo-container-margin-left: calc(calc(100vw - #{map-get($container-max-widths, "xl")} ) / 2);
+    --foo-container-margin-right: calc(calc(100vw - #{map-get($container-max-widths, "xl")} ) / 2);
+    --foo-header-height: calc(var(--foo-nav-bar-brand-height) + var(--foo-nav-bar-height) );
+    
+    scroll-padding-top: calc(var(--foo-header-height) + #{$spacer-2x});
+    overflow: auto;
+}
+
+body {
+    padding-top: var(--foo-header-height);
+    overflow-x: hidden;
+
+    &.menu-open {
+        overflow-y: hidden;
+    }
+}
+
+a {
+    color: var(--bs-link-color);
+    text-decoration: none;
+    
+    &:hover {
+        color: var(--bs-link-hover-color);
+        text-decoration: underline;
+    }
+}
+
+picture {
+    line-height: 1; /* make picture shrink wraps to image height exactly; */
+}
+
+/* bootstrap 5.x sets border-width on these 
+ * table elements to 0 with no variable option */
+ 
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th { 
+    border-width: $spacer-1x * .125; // 1px
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+p,
+ul,
+li,
+button {
+    color: inherit;
+}
+
+.fooeller-link {
+    font: $body-font; 
+    color: $primary;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+/* Root sticky footer */
+
+.root {
+    > .aem-Grid {
+        display: flex;
+        flex-direction: column;
+        //height: 100vh;
+    }
+
+    .pagefooter {
+        flex-shrink: 0;
+    }
+
+    .responsivegrid {
+        flex: 1 0 auto;
+    }
+}
+
+/* Fix author mode flexbox issue w/sticky footer/header */
+html[class*="aem-AuthorLayer-"] {
+    height: 100% !important;
+    overflow: visible !important;
+    
+    > body {
+        height: 100% !important;
+        overflow: auto !important;
+
+        > .root {
+            display: block !important;
+            box-sizing: border-box !important;
+            height: 100% !important;
+            overflow: visible !important;
+    
+            > .aem-Grid {
+                display: block !important;
+                box-sizing: border-box !important;
+                height: 100% !important;
+                overflow: visible !important;
+            }
+        }
+    }   
+}
+
+// Search Form
+
+.search-form {
+	a {
+        font-size: 23px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.13;
+        letter-spacing: 0.23px;
+        letter-spacing: 0.23px;
+		display: inline-block;
+		color: $primary;
+		margin-left: 20px;
+	}
+}
+
+.location-searching {
+    background-image: url(/resources/images/location-searching.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-left: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.international-link-caret {
+	@include rightCaret($secondary, 14px, 14px, 0px);
+}
+
+
+.was-validated :valid~.valid-feedback,
+.was-validated :valid~.valid-tooltip,
+.is-valid~.valid-feedback,
+.is-valid~.valid-tooltip {
+	display: block;
+}
+
+.was-validated .form-control:valid,
+.form-control.is-valid {
+	border-color: #28a745;
+	padding-right: calc(1.5em + 0.75rem);
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right calc(0.375em + 0.1875rem) center;
+	background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-control:valid:focus,
+.form-control.is-valid:focus {
+	border-color: #28a745;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+	box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.was-validated textarea.form-control:valid,
+textarea.form-control.is-valid {
+	padding-right: calc(1.5em + 0.75rem);
+	background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+}
+
+.was-validated .form-select:valid,
+.form-select.is-valid {
+	border-color: #28a745;
+	padding-right: calc(0.75em + 2.3125rem);
+	background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") #FFFFFF no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.was-validated .form-select:valid:focus,
+.form-select.is-valid:focus {
+	border-color: #28a745;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+	box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.was-validated .form-check-input:valid~.form-check-label,
+.form-check-input.is-valid~.form-check-label {
+	color: #28a745;
+}
+
+.was-validated .form-check-input:valid~.valid-feedback,
+.was-validated .form-check-input:valid~.valid-tooltip,
+.form-check-input.is-valid~.valid-feedback,
+.form-check-input.is-valid~.valid-tooltip {
+	display: block;
+}
+
+.was-validated .form-control:valid~.form-label,
+.form-control.is-valid~.form-label {
+	color: #28a745;
+}
+
+.was-validated .form-control:valid~.form-label::before,
+.form-control.is-valid~.form-label::before {
+	border-color: #28a745;
+}
+
+.was-validated .form-control:valid:checked~.form-label::before,
+.form-control.is-valid:checked~.form-label::before {
+	border-color: #34ce57;
+	background-color: #34ce57;
+}
+
+.was-validated .form-control:valid:focus~.form-label::before,
+.form-control.is-valid:focus~.form-label::before {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+	box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.was-validated .form-control:valid:focus:not(:checked)~.form-label::before,
+.form-control.is-valid:focus:not(:checked)~.form-label::before {
+	border-color: #28a745;
+}
+
+.was-validated .form-control:valid~.form-label,
+.form-control.is-valid~.form-label {
+	border-color: #28a745;
+}
+
+.was-validated .form-control:valid:focus~.form-label,
+.form-control.is-valid:focus~.form-label {
+	border-color: #28a745;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+	box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+@include media-breakpoint-down(md) {
+    .distance {
+        margin-top: 25px;
+    }
+
+    .btn-find-an-office {
+        width: 100%
+    }
+}

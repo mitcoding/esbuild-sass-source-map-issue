@@ -1,0 +1,39 @@
+.btn {
+  &.btn-link:hover,
+  &.btn-link:active {
+    text-decoration: underline 0.166666666666667rem;
+    text-underline-offset: 0.125rem; //fix for chrome so that it applies text-decoration-thickness
+  }
+
+  &.btn-outline-secondary {
+    --bs-btn-color: #{$secondary};
+    --bs-btn-bg: #{$primary};
+    --bs-btn-border-color: #{$secondary};
+    --bs-btn-hover-color: #{$secondary};
+    --bs-btn-hover-bg: #{$primary-dark};
+    --bs-btn-hover-border-color: #{$secondary};
+    --bs-btn-active-color: #{$secondary};
+    --bs-btn-active-bg: #{$primary};
+    --bs-btn-active-border-color: #{$primary};
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: #{$btn-disabled-fg-clr};
+    --bs-btn-disabled-bg: #{$btn-disabled-bg-clr};
+    --bs-btn-disabled-border-color: #{$btn-disabled-border-color};
+  }
+
+  &.btn-tertiary-dark {
+    --bs-btn-color: #{$white};
+    --bs-btn-bg: #{$tertiary-dark};
+    --bs-btn-border-color: #{$tertiary-dark};
+    --bs-btn-hover-color: #{$white};
+    --bs-btn-hover-bg: #{shade-color($tertiary-dark, 10%)};
+    --bs-btn-hover-border-color: #{shade-color($tertiary-dark, 10%)};
+    --bs-btn-active-color: #{$white};
+    --bs-btn-active-bg: #{$tertiary-dark};
+    --bs-btn-active-border-color: #{$secondary};
+    --bs-btn-active-shadow: none;
+    --bs-btn-disabled-color: #{$btn-disabled-fg-clr};
+    --bs-btn-disabled-bg: #{$btn-disabled-bg-clr};
+    --bs-btn-disabled-border-color: #{$btn-disabled-border-color};
+  }
+}

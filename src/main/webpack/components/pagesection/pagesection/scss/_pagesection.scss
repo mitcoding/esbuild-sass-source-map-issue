@@ -1,0 +1,292 @@
+@use 'sass:math';
+
+.pagesection {
+	> .cmp-pagesection {
+		padding: $pagesection-spacing-vertical $pagesection-spacing-horizontal;
+
+		/*
+		* The final component in a pagesection shall have a 0 margin-bottom rule
+		*/
+		> .aem-Grid	{ 
+			> :last-child {
+				margin-bottom: 0;
+
+				> * {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding: $pagesection-spacing-vertical-lg $pagesection-spacing-horizontal-lg;
+		}
+	}
+	
+	&.ss {
+		&-content {
+			&alignment-center {
+				> .cmp-pagesection > .aem-Grid {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+				}
+			}
+
+			&alignment-right {
+					> .cmp-pagesection > .aem-Grid  {
+							display: flex;
+							flex-direction: column;
+							align-items: flex-end;
+					}
+			}
+
+			&alignment-space-between {
+				display: grid;
+
+				> .has-background {
+					min-height: 12.5rem; //200px if font-size base is 16px
+				}
+
+				> .cmp-pagesection { 
+					display: grid;
+
+					> .aem-Grid  {
+							display: flex;
+							flex-flow: column;
+							justify-content: space-between;
+					}
+				}
+			}
+
+			&containersize {
+				&-full {
+					>.cmp-pagesection {
+						padding: 0;
+					}
+				}
+
+				&-verywide {
+					>.cmp-pagesection {
+						padding-right: $pagesection-spacing-horizontal-verywide;
+						padding-left: $pagesection-spacing-horizontal-verywide;
+						
+						@include media-breakpoint-up(lg) {
+							padding-right: $pagesection-spacing-horizontal-verywide-lg;
+							padding-left: $pagesection-spacing-horizontal-verywide-lg;
+						}
+					}
+				}
+
+				&-wide {
+					>.cmp-pagesection {
+						padding-right: $pagesection-spacing-horizontal-wide;
+						padding-left: $pagesection-spacing-horizontal-wide;
+
+						@include media-breakpoint-up(lg) {
+							padding-right: $pagesection-spacing-horizontal-wide-lg;
+							padding-left: $pagesection-spacing-horizontal-wide-lg;
+						}
+					}
+				}
+
+				&-narrow {
+					>.cmp-pagesection {
+						padding-right: $pagesection-spacing-horizontal-narrow;
+						padding-left: $pagesection-spacing-horizontal-narrow;
+
+						@include media-breakpoint-up(lg) {
+							padding-right: $pagesection-spacing-horizontal-narrow-lg;
+							padding-left: $pagesection-spacing-horizontal-narrow-lg;
+						}
+					}
+				}
+
+				&-container {
+					>.cmp-pagesection {
+						padding: 0;
+
+						@include media-breakpoint-up(lg) {
+							padding: 0;
+						}
+					}
+
+					@include make-container;
+					@extend .container;
+
+					& {	
+						float: none;
+					}
+			
+					@each $bp,
+					$width in $container-max-widths {
+						@include media-breakpoint-up($bp) {
+							max-width: $width;
+						}
+					}
+			
+					@include media-breakpoint-down(xl) {
+						max-width: initial;
+						padding: 0;
+					}
+				}
+			}
+		}
+
+		&-pagesectionheight {
+			&-no-vertical-space {
+				>.cmp-pagesection {
+					padding-top: 0;
+					padding-bottom: 0;
+
+					@include media-breakpoint-up(lg) {
+						padding-top: 0;
+						padding-bottom: 0;
+					}
+				}
+			}
+
+			&-ribbon {
+				>.cmp-pagesection {
+					padding-top: $pagesection-spacing-vertical-ribbon;
+					padding-bottom: $pagesection-spacing-vertical-ribbon;
+				}
+			}
+
+			&-short {
+				>.cmp-pagesection {
+					padding-top: $pagesection-spacing-vertical-short;
+					padding-bottom: $pagesection-spacing-vertical-short;
+
+					@include media-breakpoint-up(lg) {
+						padding-top: $pagesection-spacing-vertical-short-lg;
+						padding-bottom: $pagesection-spacing-vertical-short-lg;
+					}
+				}
+			}
+
+			&-tall {
+				>.cmp-pagesection {
+					padding-top: $pagesection-spacing-vertical-tall;
+					padding-bottom: $pagesection-spacing-vertical-tall;
+
+					@include media-breakpoint-up(lg) {
+						padding-top: $pagesection-spacing-vertical-tall-lg;
+						padding-bottom: $pagesection-spacing-vertical-tall-lg;
+					}
+				}
+			}
+
+			&-verytall {
+				>.cmp-pagesection {
+					padding-top: $pagesection-spacing-vertical-verytall;
+					padding-bottom: $pagesection-spacing-vertical-verytall;
+
+					@include media-breakpoint-up(lg) {
+						padding-top: $pagesection-spacing-vertical-verytall-lg;
+						padding-bottom: $pagesection-spacing-vertical-verytall-lg;
+					}
+				}
+			}
+		}
+
+		&-sectiontype-banner {
+			> .cmp-pagesection {
+					border-left: $grid-unit solid $white;
+					padding-left: $grid-unit * 3;
+			}
+		}
+		
+		&-overlaystrength {
+			@each $backgroundOpacityOption in $backgroundOpacityOptions {
+				&-#{$backgroundOpacityOption} {
+					> .cmp-pagesection {
+						position: relative;
+
+						> .aem-Grid {
+							position: relative;
+						}
+
+						&:before {
+							position: absolute;
+							top: 0;
+							left: 0;
+							display: block;
+							content: " ";
+							background: rgba(0, 0, 0, math.div( $backgroundOpacityOption, 100) );
+							width: 100%;
+							height: 100%;
+						}
+					}
+
+					/*
+					* Gradiant options are only valid for md size and up.  Smaller sizes always get a
+					* full overlay at the specified strength.  The gradient style has no effect if an
+					* overlay strength option has not been specified.
+					*/
+					@each $backgroundGradientDirection in $backgroundGradientDirections {
+						@include media-breakpoint-up(md) {
+							&.ss-overlaygradientdirection-#{$backgroundGradientDirection} {
+								position: relative;
+
+								> .aem-Grid {
+									position: relative;
+								}
+
+								> .cmp-pagesection {
+									&:before {
+										position: absolute;
+										top: 0;
+										left: 0;
+										display: block;
+										content: " ";
+										background: linear-gradient(to $backgroundGradientDirection, rgba(71, 76, 85, math.div((50 + $backgroundOpacityOption), 100) ) 25%, rgba(71, 76, 85, math.div((50 + $backgroundOpacityOption), 100) * math.div(2, 3) ) 45%, rgba(71, 76, 85, 0) 65%);
+										width: 100%;
+										height: 100%;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&-backgroundbrightness-dark {
+			> .cmp-pagesection {
+				@include dark-background();
+			}
+		}
+
+		&-pagesectionborder {
+			&-top {
+				border-top: $pagesection-border;
+			}
+
+			&-bottom {
+				border-bottom: $pagesection-border;
+			}
+
+			&-right {
+				border-right: $pagesection-border;
+			}
+
+			&-left {
+				border-left: $pagesection-border;
+			}
+
+			&-color {
+				/* 
+				* Use the theme color variables
+				* Add Change policy class names
+				* ss-pagesectionborder-color--name
+				*/
+				@each $name,
+				$color in $theme-colors {
+					&--#{$name} {
+						border-color: $color;
+					}
+				}
+			}
+		}
+	}
+}

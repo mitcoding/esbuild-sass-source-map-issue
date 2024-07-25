@@ -1,0 +1,31 @@
+// Components
+
+$line-height-lg:                 1.571;
+$line-height-sm:                 1.571;
+
+$rounded-pill:                   0;
+
+$component-active-bg:            $secondary;
+
+$component-common-margin-bottom: $spacer-3x;
+
+// Breadcrumb
+$breadcrumb-bg: $white;
+$breadcrumb-padding-y: $spacer-2x;
+$breadcrumb-padding-x: 0;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-divider-color: $black;
+$breadcrumb-active-color: $text-standard;
+
+//Modal
+$modal-content-bg: $white;
+$modal-content-border-color: $gray-400;
+$modal-content-padding: 25px;
+$modal-border-style: solid;
+$modal-header-padding-x: 1rem;
+$modal-header-padding-y: 1rem;
+$modal-header-padding: 1rem;
+$modal-inner-padding: 2rem;
+
+// Table
+$navbar-nav-link-padding-x: 1.875rem;

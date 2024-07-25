@@ -1,0 +1,61 @@
+@mixin dark-background() {
+  :not(.ss-fg) > * > {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6,
+    p,
+    ul,
+    li,
+    button {
+      color: hsl(hue($white), saturation($white), var(--foo-fg-lum, lightness($white) ) );
+    }
+
+    a:not(.btn) {
+      color: hsl(hue($white), saturation($white), var(--foo-fg-lum, lightness($white) ) );
+
+      &:hover {
+        color: hsl(hue($white), saturation($white), var(--foo-fg-lum, lightness($white) ) );
+      }
+    }
+  }
+}
+
+@mixin light-background() {
+  :not(.ss-fg) > * > {
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6,
+    p,
+    ul,
+    li,
+    button {
+      color: hsl(hue($body-color), saturation($body-color), var(--foo-fg-lum, lightness($body-color) ) );
+    }
+
+    a:not(.btn) {
+      color: hsl(hue($primary), saturation($primary), var(--foo-fg-lum, lightness($primary) ) );
+
+      &:hover {
+        color: hsl(hue($dark), saturation($dark), var(--foo-fg-lum, lightness($dark) ) );
+      }
+    }
+  }
+}

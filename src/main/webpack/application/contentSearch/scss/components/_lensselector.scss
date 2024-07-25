@@ -1,0 +1,32 @@
+.cmp-lens-selector{
+  
+  &__list {
+    display: flex;
+    list-style: none;
+    column-gap: $grid-unit * 2;
+    margin: 0;
+
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+      row-gap: $grid-unit ;
+      justify-content: center;
+      border-top: 0.06rem solid $gray-400;
+      padding-top: 1rem;
+    }
+  }
+
+  &__btn {
+    background-color: $primary;
+    color: $white;
+    font: $body-font;
+    border-radius: 0.25rem;
+    border: none;
+    height: 2.5rem;
+    min-width: 14.688rem;
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+
+}

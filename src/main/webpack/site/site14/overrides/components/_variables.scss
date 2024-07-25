@@ -1,0 +1,19 @@
+@use "sass:list";
+
+$navbar-item-font-size:                 0.875rem;
+$navbar-item-font-size-desktop:         1rem;
+$navbar-item-font-scaler:               vw-calc($navbar-item-font-size-desktop);
+
+$navbar-item-font:                      $font-weight-bold list.slash($navbar-item-font-size-desktop, 1.875rem) $font-family-base;
+$navbar-item-font-weight-desktop:       $font-weight-bold;
+$navbar-item-text-color:                $white;
+$navbar-item-text-color-active:         $navbar-item-text-color;
+$navbar-item-text-color-desktop:        $navbar-item-text-color;
+$navbar-item-bg-color-active:           $primary-dark;
+$navbar-item-bg-color-hover-mobile:     $secondary;
+$navbar-item-separator-color:           $navbar-item-bg-color-hover-mobile;
+$navbar-item-underline-color-active:    $gray-100;
+
+$navbar-title-separator-color:          $navbar-item-separator-color;
+$navbar-toggle-fg-clr:                  $white;
+$navbar-toggle-bg-clr:                  $primary-dark;

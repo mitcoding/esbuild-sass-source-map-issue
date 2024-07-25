@@ -1,0 +1,88 @@
+@import "bootstrap/scss/functions";
+
+$primary:             #8B1E41;
+$secondary:           #004677;
+$tertiary:            #F48024;
+
+$primary-dark:        #58132A;
+$primary-light:       #89636F;
+$primary-lightest:    #EEE;
+
+$secondary-dark:      #4A4E57;
+$secondary-light:     #9198A1;
+$secondary-lightest:  #E2E2E2;
+
+$tertiary-dark:       #1E74AD;
+$tertiary-light:      #F7AC6F;
+$tertiary-lightest:   #EBF4FA;
+
+$blue:                #007BFF;
+
+$white:               #FFF;
+$gray-100:            #F5F5F5;
+$gray-200:            #EFEFEF;
+$gray-300:            #E1E1E1;
+$gray-400:            #BEBEBE;
+$gray-500:            #9F9F9F;
+$gray-600:            #767676;
+$gray-700:            #626262;
+$gray-800:            #434343;
+$gray-900:            #222;
+$gray:                $gray-500;
+$black:               #000;
+
+$link-color:          $blue;
+$link-hover-color:    $secondary;
+
+
+/* --- Buttons --- */
+$btn-border-width:                   0.125rem; // 2px if font base is 16px.
+$btn-border-radius:                  0.3125rem; // 5px if font base is 16px
+
+$btn-disabled-fg-clr:                $primary-light;
+$btn-disabled-bg-clr:                $primary-lightest;
+$btn-disabled-border-color:          $primary-light;
+$btn-disabled-opacity:               1;
+
+$btn-fg-clr-primary:                 $white;
+$btn-fg-clr-primary-active:          $white;
+$btn-fg-clr-primary-hover:           $primary;
+$btn-bg-clr-primary:                 $primary;
+$btn-bg-clr-primary-active:          $white;
+$btn-bg-clr-primary-hover:           $white;
+$btn-border-color-primary:           $primary;
+$btn-border-color-primary-active:    $primary;
+$btn-border-color-primary-hover:     $primary;
+$btn-shadow-primary:                 none;
+$btn-shadow-primary-hover:           none;
+
+$btn-fg-clr-secondary:               $white;
+$btn-fg-clr-secondary-active:        $white;
+$btn-fg-clr-secondary-hover:         $secondary;
+$btn-bg-clr-secondary:               $secondary;
+$btn-bg-clr-secondary-active:        $white;
+$btn-bg-clr-secondary-hover:         $white;
+$btn-border-color-secondary:         $secondary;
+$btn-border-color-secondary-active:  $secondary;
+$btn-border-color-secondary-hover:   $secondary;
+$btn-shadow-secondary:               none;
+$btn-shadow-secondary-hover:         none;
+
+$btn-fg-clr-tertiary:                $white;
+$btn-fg-clr-tertiary-active:         $white;
+$btn-fg-clr-tertiary-hover:          $tertiary;
+$btn-bg-clr-tertiary:                $tertiary;
+$btn-bg-clr-tertiary-active:         $white;
+$btn-bg-clr-tertiary-hover:          $white;
+$btn-border-color-tertiary:          $tertiary;
+$btn-border-color-tertiary-active:   $tertiary;
+$btn-border-color-tertiary-hover:    $tertiary;
+$btn-shadow-tertiary:                none;
+$btn-shadow-tertiary-hover:          none;
+
+$btn-fg-clr-link:                   $secondary;
+$btn-fg-clr-link-hover:             $secondary-dark;
+$btn-fg-clr-link-active:            tint-color($secondary, 10%);
+$btn-underline-clr-link:            $secondary;
+$btn-underline-clr-link-hover:      $btn-fg-clr-link-hover;
+$btn-underline-clr-link-active:     $btn-fg-clr-link-active;

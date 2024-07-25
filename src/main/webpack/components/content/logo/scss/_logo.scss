@@ -1,0 +1,7 @@
+.logo {
+  margin-bottom: $common-margin-bottom-mobile;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $common-margin-bottom-desktop;
+  }
+}

@@ -1,0 +1,64 @@
+/* bootstrap color overides */
+$red:       #CD131A;
+$blue:      #0B479E;
+$orange:    #F5A800;
+$yellow:    #FCE378;
+
+$primary:   $blue;
+$secondary: $orange;
+$tertiary:  $yellow;
+
+$primary-dark:       #011E41;
+$primary-light:      #ECF0F5;
+$primary-lightest:   #F7F9FB;
+
+$secondary-light:    #FCEDC9;
+$secondary-lightest: #FEF8E9;
+
+$tertiary-light:    #ECEBE7;
+$tertiary-lightest: #F7F7F5;
+
+$white:    #FFF;
+$gray-100: #F4F4F4;
+$gray-200: #EFEFEF;
+$gray-300: #E1E1E1;
+$gray-400: #BEBEBE;
+$gray-500: #9F9F9F;
+$gray-600: #767676;
+$gray-700: #626262;
+$gray-800: #434343;
+$gray-900: #222222;
+$gray:     $gray-500;
+$black:    #020202;
+
+$custom-theme-colors: (
+  "red": $red,
+  "blue": $blue,
+  "orange": $orange,
+  "yellow": $yellow 
+);
+
+/* --- Buttons --- */
+$btn-fg-clr-secondary: $primary;
+$btn-fg-clr-secondary-hover: $primary-dark;
+$btn-bg-clr-secondary: $white;
+$btn-bg-clr-secondary-hover: $white;
+$btn-border-color-secondary: $primary;
+$btn-border-color-secondary-hover: $primary-dark;
+$btn-shadow-secondary: none;
+$btn-shadow-secondary-hover: 0 .5rem 1rem rgba(0,0,0,.15);
+
+$btn-fg-clr-tertiary: $primary;
+$btn-fg-clr-tertiary-hover: $primary-dark;
+$btn-bg-clr-tertiary: transparent;
+$btn-bg-clr-tertiary-hover: transparent;
+$btn-border-color-tertiary: transparent;
+$btn-border-color-tertiary-hover: transparent;
+$btn-shadow-tertiary: none;
+$btn-shadow-tertiary-hover: none;
+
+
+/* --- Dropdowns --- */
+$dropdown-link-color: $black;
+$dropdown-link-hover-color: $black;
+$dropdown-link-hover-bg: $primary-light;

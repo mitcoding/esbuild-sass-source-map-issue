@@ -1,0 +1,178 @@
+.cmp-search-results-container {
+  --bs-gap: #{$spacer-2x};
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__toolbar {
+    display: none;
+  }
+
+  &__results-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &__no-results {
+    height: 10rem;
+    color: $primary;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__no-results-txt {
+    font: $headline5-font;
+    align-self: center;
+  }
+
+  /*
+   * Grid Style
+   */
+  .listing-grid {
+    --bs-gap: #{$spacer-2x};
+    margin-bottom: $spacer-3x;
+
+    .cmp-search-results-listing__list {
+      @extend .grid;
+    }
+
+    .cmp-search-results-listing__item {
+      @extend .g-col-12;
+      @extend .g-col-sm-6;
+      @extend .g-col-md-4;
+      @extend .g-col-xl-3;
+    }
+
+    .cmp-content-search-result-list-item,
+    .cmp-content-search-person-list-item {
+      padding: $spacer-2x;
+      border-radius: 0;
+      border: 0.0625rem solid $gray-200;
+      box-shadow: $box-shadow-heightened-elevation;
+    }
+  }
+
+  .listing-list {
+
+    .cmp-result-count-message__list{
+      display: flex;
+      width: 100%;
+    }
+
+    .cmp-content-search-result-list-item {
+      width: 100%;
+      //border-bottom: 0.06rem solid $gray-400;
+      
+    }
+
+    .cmp-content-search-person-list-item__wrap {
+      //border-bottom: 0.06rem solid $gray-400;
+    }
+  }
+
+  .cmp-result-count-message{
+    flex: 1;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: $grid-unit;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .cmp-search-results-container {
+    .listing-grid {
+      .cmp-search-results-listing__list {
+        // Ensure we show the grid in a row
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+// Style system option accounting for people cards
+.contentsearchresults {
+
+  &.ss-usage-peoplecards {
+    .cmp-search-results-container {
+      &__toolbar {
+        display: none;
+      }
+    }
+
+    .cmp-active-contraints {
+      display: none;
+    }
+
+    .cmp-search-results-container__results-layout {
+      flex-direction: column;
+    }
+
+    .cmp-search-results-container__facets-wrap {
+      @extend .grid;
+      --bs-gap: #{$spacer-2x};
+      width: 100%;
+
+      > div {
+        @extend .g-col-md-5;
+      }
+    }
+
+    .cmp-search-results-container__title-facets {
+      display: none;
+    }
+
+    .cmp-facet-selection__field, .cmp-embedded-search-bar label {
+      color: $text-standard;
+      font: $body-font;
+      margin-bottom: 0;
+    }
+
+    .cmp-facet-selection {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+  .contentsearchresults {
+
+    &.ss-usage-peoplecards {
+      .cmp-facet-selection {
+        padding: 0;
+        border-bottom: 0;
+        border-top: 0;
+        margin-bottom: $spacer-2x;
+
+        &__list {
+          margin-top: 0;
+
+          // In person mode we don't open and close the facets
+          &--closed {
+            display: block;
+          }
+        }
+
+        &__mobile-btn-wrap {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up( md ) {
+  .cmp-search-results-container {
+    &__results-layout {
+      // Place the facets and results side by side at md and above
+      flex-direction: row;
+    }
+
+    // Present at mobile and above
+    &__title-facets {
+      display: block;
+    }
+  }
+}

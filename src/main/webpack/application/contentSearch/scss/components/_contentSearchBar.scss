@@ -1,0 +1,49 @@
+.cmp-content-searchbar {
+
+  &__results {
+    font-size: rem-calc(24px);
+    line-height: rem-calc(32px);
+    margin-bottom: rem-calc(8px);
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      font-size: rem-calc(56px);
+      line-height: rem-calc(72px);
+      margin-bottom: rem-calc(26px);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__form-btn{
+    width: 100%;
+  }
+
+  &__form-input {
+    height: 2.375rem;
+  }
+
+  &__form-label {
+    display: none;
+  }
+
+  &__input-container {
+    @include media-breakpoint-up(lg) {
+      flex-grow: 1;
+      margin-right: rem-calc(32px);
+      margin-bottom: 0;
+    }
+  }
+}

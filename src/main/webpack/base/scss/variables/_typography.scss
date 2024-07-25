@@ -1,0 +1,112 @@
+// ---- Typography ----
+$rfs-breakpoint:              992px !default;
+
+$font-family-icon-font:       "Font Awesome 6 Pro" !default;
+$font-family-sans-serif:      "Inter", sans-serif !default;
+$font-family-base:            $font-family-sans-serif !default;
+$font-size-base:              1rem * $global-size-basis !default;
+$small-font-size:             68.75% !default;
+$font-line-height:            1.5 !default;
+$font-weight-lighter:         lighter !default;
+$font-weight-thin:            100 !default;
+$font-weight-ultraLight:      200 !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-ultraBold:       800 !default;
+$font-weight-black:           900 !default;
+$font-weight-bolder:          bolder !default;
+
+$headings-font-family:        "Inter", sans-serif !default;
+$headings-font-weight:        $font-weight-bold !default;
+$headings-line-height:        1.25 !default;
+$headings-color:              $black !default;
+$headings-margin-bottom:      2rem * $global-spacing-basis !default;
+
+$h1-font-size:                $font-size-base * 1.5 !default; // 24px
+$h2-font-size:                $font-size-base * 1.375 !default; // 22px
+$h3-font-size:                $font-size-base * 1.25 !default; // 20px
+$h4-font-size:                $font-size-base * 1.125 !default; // 18px
+$h5-font-size:                $font-size-base * 1 !default; // 16px
+$h6-font-size:                $font-size-base * 0.875 !default; // 14px
+
+$h1-font-size-desktop:        $font-size-base * 3 !default; // 48px
+$h2-font-size-desktop:        $font-size-base * 2.5 !default; // 40px
+$h3-font-size-desktop:        $font-size-base * 2 !default; // 32px
+$h4-font-size-desktop:        $font-size-base * 1.625 !default; // 26px
+$h5-font-size-desktop:        $font-size-base * 1.25 !default; // 20px
+$h6-font-size-desktop:        $font-size-base * 1 !default; // 16px
+
+$h1-font-scaler:              vw-calc($h1-font-size-desktop) !default;
+$h2-font-scaler:              vw-calc($h2-font-size-desktop) !default;
+$h3-font-scaler:              vw-calc($h3-font-size-desktop) !default;
+$h4-font-scaler:              vw-calc($h4-font-size-desktop) !default;
+$h5-font-scaler:              vw-calc($h5-font-size-desktop) !default; 
+$h6-font-scaler:              vw-calc($h6-font-size-desktop) !default;
+
+$h1-line-height:              $font-size-base * 1.875 !default; // 30px
+$h2-line-height:              $font-size-base * 1.5 !default; // 24px
+$h3-line-height:              $font-size-base * 1.875 !default; // 30px
+$h4-line-height:              $font-size-base * 1.5 !default; // 24px
+$h5-line-height:              $font-size-base * 1.25 !default; // 20px
+$h6-line-height:              $font-size-base * 1.25 !default; // 20px
+
+$h1-line-height-desktop:      $font-size-base * 2.8125 !default; // 45px 
+$h2-line-height-desktop:      $font-size-base * 1.875 !default; // 30px
+$h3-line-height-desktop:      $font-size-base * 1.875 !default; // 30px
+$h4-line-height-desktop:      $font-size-base * 1.5 !default; // 24px
+$h5-line-height-desktop:      $font-size-base * 1.5 !default; // 24px
+$h6-line-height-desktop:      $font-size-base * 1.25 !default; // 20px
+
+$h1-line-height-scaler:       vw-calc($h1-line-height-desktop) !default; 
+$h2-line-height-scaler:       vw-calc($h2-line-height-desktop) !default; 
+$h3-line-height-scaler:       vw-calc($h3-line-height-desktop) !default; 
+$h4-line-height-scaler:       vw-calc($h4-line-height-desktop) !default; 
+$h5-line-height-scaler:       vw-calc($h5-line-height-desktop) !default; 
+$h6-line-height-scaler:       vw-calc($h6-line-height-desktop) !default;
+
+$h1-margin-bottom:            0.416em !default; // 20px = 80px total height
+$h2-margin-bottom:            0.75em !default; //  20px = 80px total height
+$h3-margin-bottom:            0.5em !default; // 16px = 56px total height
+$h4-margin-bottom:            0.596em !default; // 15.5px = 48px total height 
+$h5-margin-bottom:            0.75em !default; // 15px = 40px total height
+$h6-margin-bottom:            1em !default; // 16px = 32px total height
+
+$body-lg-font-size:           $font-size-base * 1.25 !default; // 20px
+$body-md-font-size:           $font-size-base * 1 !default; // 16px
+$body-reg-font-size:          $font-size-base * 0.875 !default; // 14px
+$body-sm-font-size:           $font-size-base * 0.75 !default; // 12px
+$body-xs-font-size:           $font-size-base * 0.625 !default; // 10px
+
+$body-lg-font-size-desktop:   $font-size-base * 1.5 !default; // 24px
+$body-md-font-size-desktop:   $font-size-base * 1.25 !default; // 20px
+$body-reg-font-size-desktop:  $font-size-base * 1 !default; // 16px
+$body-sm-font-size-desktop:   $font-size-base * 0.875 !default; // 14px
+$body-xs-font-size-desktop:   $font-size-base * 0.75 !default; // 12px
+
+$body-lg-font-scaler:         vw-calc($body-lg-font-size-desktop) !default;
+$body-md-font-scaler:         vw-calc($body-md-font-size-desktop) !default;
+$body-reg-font-scaler:        vw-calc($body-reg-font-size-desktop) !default;
+$body-sm-font-scaler:         vw-calc($body-sm-font-size-desktop) !default;
+$body-xs-font-scaler:         vw-calc($body-xs-font-size-desktop) !default;
+
+$body-lg-margin-bottom:       1em !default; // 24px = 60px total height
+$body-md-margin-bottom:       1.167em !default; // 21px = 48px total height
+$body-reg-margin-bottom:      1em !default; // 16px = 40px total height
+$body-sm-margin-bottom:       1.072em !default; // 15px = 36px total height
+$body-xs-margin-bottom:       1.167em !default; // 14px = 21px total height
+
+$caption-font:                $font-weight-normal 0.75rem / 1rem "Inter", sans-serif !default;
+$headline5-font:              $font-weight-bold 1.5rem / 1.875rem "Inter", sans-serif !default;
+
+$subhead1-font:               $font-weight-normal 1.125rem / 1.5rem "Inter", sans-serif !default;
+$body-font:                   normal 1rem / 1.5rem "Inter", sans-serif;
+$body-font-2:                 normal 0.875rem / 1.25rem "Inter", sans-serif !default;
+
+$notification-font-sans:      $font-weight-normal 1rem / 1.5rem "Inter", sans-serif !default;
+
+$link-color:                  $primary !default;
+$link-hover-color:            $primary !default;
+$table-accent-bg:             #DFDFDF !default;

@@ -1,0 +1,185 @@
+// Facet control styling
+.cmp-search-results-container {
+
+  // The main title is just for desktop.  On mobile you have a button control
+  &__title-facets{
+    color: $primary;
+    margin-bottom: $spacer-2x;
+
+    // Do not show the title on mobile
+    display: none;
+  }
+}
+
+.cmp-facet-selection {
+  &__mobile-btn-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__mobile-btn {
+    @extend .btn;
+    @extend .btn-primary;
+    text-align: left;
+
+    width: 100%;
+
+    background-color: $btn-bg-clr-tertiary;
+    color: $btn-fg-clr-tertiary;
+
+    &:hover {
+      background-color: $btn-bg-clr-tertiary-hover;
+      color: $btn-fg-clr-tertiary-hover;
+    }
+
+    &:after {
+      margin-left: $spacer-1x;
+      @include font-icon("\f0b0", $font-family-icon-font);
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .cmp-search-results-container {
+
+    &__facets-wrap {
+
+      flex-basis: 20%;
+      flex-shrink: 0;
+
+      .cmp-facet-selection__list {
+        padding: 0;
+        display: block;
+      }
+    }
+
+    &__title-facets {
+      display: block;
+    }
+  }
+
+  .cmp-facet-selection {
+    &__mobile-btn-wrap {
+      display: none;
+    }
+
+    &__list {
+      padding: 0;
+    }
+  }
+}
+
+
+
+// Individual facet styling
+.cmp-facet-selection {
+
+  margin-bottom: $spacer-4x;
+
+  &__list {
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    min-width: 13rem;
+    row-gap: $spacer-1x;
+    column-gap: $spacer-4x;
+    padding: $spacer-3x;
+
+    // not shown by default.  Only shown on focus or on desktop
+    display: block;
+
+    &--closed {
+      display: none;
+    }
+  }
+
+  &__list-facet-item {
+    display: flex;
+    margin-bottom: $spacer-1x;
+    align-items: center;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $spacer-2x;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__field {
+    &:after{
+      content: ':';
+    }
+  }
+
+  &__value {
+    font: $body-font;
+  }
+
+  &__facet-values {
+    display: flex;
+    flex-direction: column;
+    //row-gap: $spacer-1x;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  &__facet-label {
+    /*
+    font: $body-font-2;
+    margin-bottom: 0;
+    color: $gray-600;
+
+     */
+  }
+
+  &__checkbox {
+    border: 0.06rem solid $gray-600;
+    height: 1.25rem;
+    width: 1.25rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: $spacer-1x;
+  }
+
+  &__checkbox:after {
+    content: " ";
+    background-color: $primary;
+    display: inline-block;
+    visibility: visible;
+  }
+
+  &__checkbox:checked:after {
+    font-family: $font-family-icon-font;
+    content: "\f00c";
+    font-weight: 900; 
+    font-size: 0.875rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 0.25rem;
+    -webkit-text-stroke: 1px $primary;
+  }
+
+}
+
+@include media-breakpoint-up(md) {
+  .cmp-facet-selection {
+    &__list {
+      &--closed {
+        // Even if closed somehow gets set on non-mobile still display the list
+        display: block;
+      }
+    }
+  }
+}

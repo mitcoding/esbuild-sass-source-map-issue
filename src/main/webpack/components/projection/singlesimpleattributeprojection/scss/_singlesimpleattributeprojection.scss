@@ -1,0 +1,11 @@
+.singlesimpleattributeprojection {
+  margin: 0;
+
+  > .ss-headingposition-stacked {
+    margin-bottom: 0; // Get rid of margin inherent in elements like headings
+  }
+
+  > .ss-alignment-center {
+    text-align: center;
+  }
+}

@@ -1,0 +1,111 @@
+.linkcalltoaction {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: $component-common-margin-bottom;
+	
+	.cmp-linkcalltoaction {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		text-transform: none;
+		width: fit-content;
+		
+		&__text { 
+			white-space: break-spaces;
+		}
+
+		&__image-icon {
+			height: var(--bs-btn-font-size, var(--bs-body-font-size, 1rem) );
+			margin-right: $spacer-1x;
+			vertical-align: middle;
+		}
+
+		&__font-icon {
+			font-family: $font-family-icon-font;
+			margin-right: $spacer-1x;
+			vertical-align: middle;
+		}
+	}
+
+	&.ss-navigation-link { 
+		.cmp-linkcalltoaction {
+			justify-content: flex-start;
+			padding: $spacer-2x;
+			box-shadow: $box-shadow-heightened-elevation;
+
+			&__font-icon {
+				font-size: 2rem;
+				margin-right: $spacer-2x;
+			}
+
+			&__text::after{
+				font-family: $font-family-icon-font;
+				font-weight: 900;
+				content: '\f054';
+				margin-left: $spacer-2x;
+			}
+		}
+	}
+
+	&.ss-alignment-right {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	&.ss-alignment-center {
+		//text-align: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	&.ss-full-width {
+		.cmp-linkcalltoaction {
+            width: 100%;
+		}
+  }
+}
+
+/*
+ * Button styling for grid layout in the generic list
+ */
+@each $bp in $genericlist-grid-breakpoints {
+
+	@for $i from 2 through $genericlist-grid-layouts {
+		.ss-layout-grid-#{$bp}-#{$i}column {
+			> ul > li > div > .linkcalltoaction > .cmp-linkcalltoaction {
+				width: 100%;
+			}
+		}
+	}
+
+}
+
+
+@include media-breakpoint-down(md) {
+	.columnrow {
+		.grid {
+			> .g-col-12 {
+				> .linkcalltoaction {
+					.btn {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Once the fluid layout collapses buttons in the layout take up full width
+@include media-breakpoint-down(lg) {
+	.ss-layout-fluid {
+		.linkcalltoaction {
+			.btn {
+				width: 100%;
+			}
+		}
+	}
+}

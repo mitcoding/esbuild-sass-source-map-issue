@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+@function vw-calc($values, $maxViewPortWidth: null) {
+    $vw-values: ();
+    $count: length($values);
+
+    @if $maxViewPortWidth == null {
+        $maxViewPortWidth: map-get($container-max-widths, "lg");
+    }
+
+    @if $count == 1 {
+       @return convert-to-vw($values, $maxViewPortWidth);
+    }
+
+    @for $i from 1 through $count {
+        $vw-values: append($vw-values, convert-to-vw(nth($values, $i), $maxViewPortWidth));
+    }
+
+    @return $vw-values;
+}
+
+@function convert-to-vw($value, $maxViewPortWidth: null) {
+  @if unit($value) != 'vw' {
+      $pxValue: px-calc($value);
+      $value: math.div(strip-unit($pxValue), strip-unit($maxViewPortWidth) ) * 100vw;
+  }
+
+  @if $value == 0vw {
+      $value: 0;
+  }
+
+  @return $value;
+}

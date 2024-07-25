@@ -1,0 +1,8 @@
+@include media-breakpoint-down(md) {
+  .navbar-collapse {
+    > .cmp-pageheader__nav-title {
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}

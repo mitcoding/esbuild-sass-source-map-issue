@@ -1,0 +1,50 @@
+@use 'sass:math';
+
+$breakpoint-base: "lg"; 
+$rem-base: 16;
+
+@function base($unit, $base: null) {
+  @if $base != null { @return $base; }
+
+  @if $unit == "vw" {
+    @return map-get($container-max-widths, $breakpoint-base);
+  }
+
+  @return $rem-base;
+}
+
+@function strip-unit($num) {
+  @return math.div($num , ($num * 0 + 1) );
+}
+
+@function px-calc($values, $base: null) {
+  $px-values: ();
+  $count: length($values);
+
+  @if $count == 1 {
+     @return convert-to-px($values, $base);
+  }
+
+  @for $i from 1 through $count {
+      $px-values: append($px-values, convert-to-px(nth($values, $i), $base));
+  }
+
+  @return $px-values;
+}
+
+@function convert-to-px($value, $base: null) {
+  $unit: unit($value);
+
+  @if $unit != 'px' {
+      $value: strip-unit($value);
+      $base: base($base);
+
+      $value: strip-unit($value) * strip-unit($base) * 1px;
+  }
+
+  @if $value == 0px {
+      $value: 0;
+  }
+
+  @return $value;
+}

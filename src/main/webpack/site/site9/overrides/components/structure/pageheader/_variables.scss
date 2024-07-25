@@ -1,0 +1,18 @@
+$navbar-item-text-color-active:                  $primary-light;
+$navbar-item-text-color-active-mobile:           #000;
+$navbar-item-bg-color-active:                    transparent;
+$navbar-item-bg-color-hover-mobile:              $primary-light;
+$navbar-item-underline-offset-bottom:            map-get($spacers, 25) * -1;
+$navbar-item-underline-height:                   map-get($spacers, 25);
+$navbar-item-underline-color-active:             $primary-light;
+$navbar-item-underline-color-active-mobile:      $navbar-item-underline-color-active;
+$navbar-item-underline-border-radius:             0;
+$navbar-nav-link-padding-x:                       1.25rem;
+
+$dropdown-spacer:                                #{map-get($spacers, 25)};
+$dropdown-font-size:                              0.75rem; //12px if base font is 16
+$dropdown-font-size-desktop:                      0.875rem; //14px if base font is 16px
+$dropdown-font-scaler:                           vw-calc($dropdown-font-size-desktop);
+$dropdown-font-weight:                           bold;
+$dropdown-link-align:                            center;
+$dropdown-link-transform:                        none;

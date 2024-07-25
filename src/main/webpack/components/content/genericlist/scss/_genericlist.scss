@@ -1,0 +1,189 @@
+.genericlist {
+    margin-bottom: $genericlist-margin-bottom;
+
+    .cmp-genericlist {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            max-width: 100%;
+            margin-bottom: $genericlist-item-margin-bottom-stacked;
+
+            &.icon {
+                margin-bottom: $icon-margin-bottom;
+            }
+
+            /*
+             * Components which constitute the list items should have a 0 margin rule applied
+             * so that the list can control the spacing.  Lists of entities in general should
+             * have uniform spacing.  If uniform spacing is not desired ... don't use a list.
+             */
+            > * {
+                margin: 0;
+
+                > :last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &.ss-spacing-stacked {
+        >.cmp-genericlist {
+            >.cmp-genericlist__item {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // List Type Styles
+    &.ss-listitemstyle-disc {
+        >.cmp-genericlist {
+            list-style: disc;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-circle {
+        >.cmp-genericlist {
+            list-style: circle;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-square {
+        >.cmp-genericlist {
+            list-style: square;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-decimal {
+        >.cmp-genericlist {
+            list-style: decimal;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-listitemstyle-loweralpha {
+        >.cmp-genericlist {
+            list-style: lower-alpha;
+            margin-left: $spacer-3x;
+        }
+    }
+
+    &.ss-layout-fluid {
+        >.cmp-genericlist {
+            display: flex;
+            flex-flow: column wrap;
+
+            column-gap: var(--bs-gutter-x, $genericlist-grid-column-gap);
+            row-gap: var(--bs-gutter-y, $genericlist-grid-row-gap);
+
+            @include media-breakpoint-up(lg) {
+                flex-direction: row;
+            }
+
+            // When in a fluid layout the margin is controlled by the gap
+            >.cmp-genericlist__item {
+                margin-bottom: 0;
+            }
+        }
+
+        &--row {
+            >.cmp-genericlist {
+                flex-direction: row;
+            }
+        }
+
+        &--nowrap {
+            >.cmp-genericlist {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+    &.ss-fluidalignment-center {
+        >.cmp-genericlist {
+            //align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &.ss-fluidalignment-right {
+        >.cmp-genericlist {
+            //align-items: flex-end;
+            justify-content: flex-end;
+        }
+    }
+
+    &.ss-fluidalignmentvertical-center {
+        >.cmp-genericlist {
+            align-items: center;
+        }
+    }
+}
+
+@each $bp in $genericlist-grid-breakpoints {
+
+    @for $i from 2 through $genericlist-grid-layouts {
+
+        // Force a larger bottom margin for grid items
+        .genericlist {
+            &.ss-layout-grid-#{$bp}-#{$i}column {
+                >.cmp-genericlist {
+                    >.cmp-genericlist__item {
+                        margin-bottom: $genericlist-fluid-item-margin-bottom;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Create grid layout at the appropriate breakpoint
+        @include media-breakpoint-up($bp) {
+            .genericlist {
+                &.ss-layout-grid-#{$bp}-#{$i}column {
+                    >.cmp-genericlist {
+                        display: grid;
+                        grid-template-columns: repeat($i, 1fr);
+                        column-gap: var(--bs-gutter-x, $genericlist-grid-column-gap);
+                        row-gap: var(--bs-gutter-y, $genericlist-grid-row-gap);
+                        align-items: stretch;
+
+                        >.cmp-genericlist__item {
+
+                            /*
+                             * Remove the margin-bottom from list items so that the grid controls the spacing
+                             */
+                            margin-bottom: 0;
+
+                            > * {
+                                /*
+                                 * Remove the bottom margin from all components so the grid spacing can control the margin
+                                 */
+                                margin-bottom: 0;
+                                height: 100%;
+
+                                /*
+                                 * Special handling for service teaser to force the height to 100%
+                                 */
+                                > .serviceteaser {
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

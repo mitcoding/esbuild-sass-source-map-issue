@@ -1,0 +1,24 @@
+// Vendor Styles
+@import "bootstrap/scss/mixins/banner";
+@include bsBanner("");
+@import "bootstrap/scss/functions";
+@import './functions/functions';
+
+@import './variables/bootstrap-variable-overrides';
+
+@import "bootstrap/scss/variables";
+
+@import "./variables/maps";
+
+$fa-font-path: "../resources/fonts/fontawesome-free/webfonts";
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+@import '@fortawesome/fontawesome-free/scss/solid.scss';
+@import '@fortawesome/fontawesome-free/scss/regular.scss';
+
+$inter-font-path: "../resources/fonts/inter/v13";
+@import './fonts/inter/v13/font';
+
+
+@import "./../../components/variables";

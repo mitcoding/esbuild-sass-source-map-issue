@@ -1,0 +1,5 @@
+// Mimicking BS5 vergical gutter setup.  See https://getbootstrap.com/docs/5.1/layout/gutters/#vertical-gutters
+$columnrow-margin-top: -1 * $grid-gutter-width !default;
+$columnrow-margin-top-desktop: $columnrow-margin-top !default;
+$columnrow-margin-bottom: $grid-gutter-width * .75 !default;
+$columnrow-margin-bottom-desktop: $grid-gutter-width * 1.25 !default;

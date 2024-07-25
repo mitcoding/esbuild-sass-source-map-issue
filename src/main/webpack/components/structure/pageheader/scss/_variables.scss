@@ -1,0 +1,15 @@
+$pageheader-padding: 0 !default;
+$pageheader-mobile-padding: 0 $spacer-2x !default;
+$pageheader-box-shadow: none !default;
+$pageheader-logo-margin-right: $spacer-4x !default;
+$pageheader-logo-first-bg-color: #CED4D7 !default; // FOO Light Gray 75%
+$pageheader-logo-second-bg-color: #E8EBEC !default; // FOO Light Gray 35%
+
+$pageheader-btn-color-mobile: $black !default;
+$pageheader-btn-bg-color-mobile: $pageheader-logo-second-bg-color !default;
+
+$pageheader-navbar-height: 4rem !default; //64px
+$pageheader-item-width-mobile: 15rem !default; //240px
+
+$pageheader-navbar-bg-color: $primary !default;
+$pageheader-navbar-bg-color-desktop: $gray-200 !default;

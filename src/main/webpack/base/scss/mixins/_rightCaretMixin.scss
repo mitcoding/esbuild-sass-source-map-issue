@@ -1,0 +1,20 @@
+@mixin rightCaret($color: $primary, $height: 12px, $width: 14px, $margin: 24px) {
+    &:after {
+        border-top: $height*0.75 solid transparent;
+        border-bottom: $height*0.75 solid transparent;
+        border-left: $width*0.75 solid $color;
+        content: '';
+        display: inline-block;
+        height: 0;
+        margin-left: $margin*0.75;
+        width: 0;
+        vertical-align: middle;
+
+        @include media-breakpoint-up(md) {
+            border-top: $height solid transparent;
+            border-bottom: $height solid transparent;
+            border-left: $width solid $color;
+            margin-left: $margin;
+        }
+    }
+}

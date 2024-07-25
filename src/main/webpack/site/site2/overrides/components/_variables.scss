@@ -1,0 +1,38 @@
+@use "sass:list";
+
+$navbar-item-font-size:                0.875rem; // 14px if base font 16px
+$navbar-item-font-size-desktop:        1rem; // 16px if base font 16px
+$navbar-item-font-scaler:              vw-calc($navbar-item-font-size-desktop);
+$navbar-item-font:                     $font-weight-normal list.slash($navbar-item-font-size-desktop, 1.875rem) $font-family-base;
+
+$navbar-item-text-color:               $white;
+$navbar-item-text-color-desktop:       $white;
+$navbar-item-text-color-active:        $yellow;
+$navbar-item-bg-color-active:          transparent;
+$navbar-item-separator-color:          $yellow;
+$navbar-item-underline-color-active:   $yellow;
+
+$navbar-item-underline-offset-bottom:  -0.1875rem; // 3px if base font is 16px
+$navbar-item-underline-border-radius:   0;
+
+$navbar-title-separator-color:         $yellow;
+
+$navbar-toggle-fg-clr:                 $white;
+$navbar-toggle-bg-clr:                 $tertiary;
+
+$dropdown-bg:                          $white;
+$dropdown-border-width:                0;
+
+$dropdown-font-size:                   0.875rem; //14px if base font is 16
+$dropdown-font-size-desktop:           1rem;     //16px if base font is 16px
+$dropdown-font-scaler:                 vw-calc($dropdown-font-size-desktop);
+$dropdown-font-weight:                 bold;
+
+$dropdown-link-align:                  center;
+$dropdown-link-color:                  $tertiary;
+$dropdown-link-hover-color:            $white;
+$dropdown-link-hover-bg:               $tertiary;
+$dropdown-link-seperator:              1px solid $gray;
+$dropdown-link-transform:              none;
+
+$dropdown-spacer:                      $navbar-item-underline-offset-bottom * -1;
